@@ -1,0 +1,164 @@
+---
+title: 나의 첫 github 블로그 만들기 with Jekyll
+author:
+  name: Su Kyung Kim
+  link: https://github.com/devkyung
+date: 2022-01-12 14:55:35 +0900
+categories: [Project, Develop]
+tags: [git]
+---
+
+# 나의 첫 github 블로그 만들기 with Jekyll
+
+# 블로그 주소
+
+[https://sukyungdev.github.io/](https://sukyungdev.github.io/)
+
+- 사용테마 : [Chirpy](https://jamstackthemes.dev/theme/jekyll-theme-chirpy/)
+
+## 목차
+
+```
+1. 만들게 된 계기
+2. github 플랫폼을 택한 이유
+3. with jekyll
+4. 과정과 시행착오
+5. 첫 화면
+6. 추가 내용
+7. 느낀점
+8. 참고자료 (Reference)
+```
+
+## 1. 만들게 된 계기?
+
+> 본격적인 개발 공부를 시작하는데 있어서  
+> 나의 개발 성장 일지를 정리할 수 있는 블로그를  
+> 만들고 싶었다.
+
+## 2. github 플랫폼을 택한 이유
+
+1. 이미 많은 개발자 분들이 github 블로그를 사용하고 있다.
+2. 개발자가 가장 운영하기 적합한 블로그라고 생각하기 때문이다.
+3. 이번 github 블로그 제작을 통해 git, github과 친해지고 싶었다.
+
+## 3. with Jekyll
+
+github 블로그는 일반적으로 정적사이트 생성기(Static Site Generator)로  
+만들어지는 것 같다.
+
+Static Site Generator가 무엇을 하는지는
+[여기](https://iamsang.com/blog/2020/10/10/custom-static-site-generator/)에 간결하게
+설명되어 있다.  
+다양한 정적사이트 생성기가 있는데 나는 가장 많이 사용되어지고  
+있는 Jekyll을 선택하였다.(다른 정적 사이트 생성기에 비해 많은 래퍼런스가 있기 때문에)
+
+## 4. 과정과 시행착오
+
+### 4.1 과정
+
+간단하게 과정을 설명한다면(MacBook 기준)
+
+1. Homebrew를 맥북 터미널에서 다운받고, ruby 설치
+   > 맥북에는 기본적으로 ruby가 깔려 있으나 지킬을 지원하지 않는 경우가 있고,  
+   > 맥북 자체의 ruby 보다는 따로 설치한 ruby를 사용하는 편이 좋다는 글을 여러 보았다.
+   > ruby의 버전 관리를 위해서 rbenv, rvm 같은 툴을 설치해야한다.  
+   > rvm 보다는 상대적으로 가벼운 rbenv를 사용하는 분이 많았다.  
+   > [rbenv 개념 및 사용이유](https://kbs4674.tistory.com/187)
+2. Jekyll 설치
+   ```
+   gem install jekyll bundler
+   ```
+3. Jekyll 테마 고르기  
+   [https://jamstackthemes.dev/](https://jamstackthemes.dev/) 같은 Jekyll 테마 사이트에서  
+   마음에 드는 테마를 고른다.
+
+4. Jekyll 실행 및 테마 적용
+
+   이건 크게 2가지 방법이 있는데
+
+- 고른 테마의 github 저장소에서 .zip 파일로 다운받아 적용하는 경우  
+  [Zedd0202님 블로그 참고](https://zeddios.tistory.com/1223)
+
+- 고른 테마의 github 저장소를 fork해서 나의 repository에 적용하는 경우  
+  [캘거리 홈리스님 블로그 참고](https://calgaryhomeless.tistory.com/1)
+  [하얀눈길님 블로그 참고](https://www.irgroup.org/posts/jekyll-chirpy/)
+
+> 개인적인 경험으로는 후자를 더 추천한다.
+
+### 4.1 시행착오
+
+#### 4.1.1 설치 관련 에러
+
+일단 필자의 경우, rbenv를 이용해서 ruby설치까지는 진행했지만  
+Jekyll 설치하는 데 있어서 몇가지 문제를 만났다.
+
+`Gem::FilePermissionError`  
+rbenv PATH를 추가하지 않아서 생긴 에러이다.  
+[https://jojoldu.tistory.com/288](https://jojoldu.tistory.com/288)
+이 블로그를 참고하여 해결할수 있었다.
+
+`nil:NilClass`  
+이런 에러를 Jekyll 설치중에 발견했는데
+
+`sudo gem install rdoc`  
+터미널에 이러한 명령어를 입력해 해결 할 수 있었다.  
+[참고자료](https://github.com/ruby/rdoc/issues/786)
+
+---
+
+#### 4.1.2 테마 관련 에러
+
+아까 테마를 적용하는 두가지 방법 중에서 후자를 추천한다는 이야기를 했었는데  
+필자의 경우 전자의 방법(.zip 폴더로 다운받아서 적용하는 방법)으로 적용할 경우  
+로컬에서는 테마 적용이 되나 github.io 에서는 적용이 되지 않았다.  
+이 문제 때문에 한참을 헤맸었다.
+
+그러던 중 캘거리 홈리스님과 하얀눈꽃님의 블로그를 보고  
+테마의 깃헙 저장소를 fork하는 방법이 있다는 것을 알게 되었고,  
+무사히 테마를 적용할 수 있었다.
+
+첫번째 방법으로는 적용되지 않던 테마가 두번째 방법으로 하니  
+무사히 적용이 되었다.
+
+[캘거리 홈리스님 블로그](https://calgaryhomeless.tistory.com/1)  
+[하얀눈길님 블로그](https://www.irgroup.org/posts/jekyll-chirpy/)  
+두분 블로그가 정말 큰 도움이 되었다.
+
+## 5. 첫 화면
+
+감동의 첫 화면
+
+<img src="https://user-images.githubusercontent.com/96860670/148946568-6556511c-e461-4b31-8c95-fdda0b329418.png" width ="960px" hight ="480px">
+
+2022년 1월 1일 부터 만들기 시작해서 1월 10일날 이 화면을 볼 수 있었다.
+
+## 6. 기능 추가
+
+추후로 추가할 기능
+
+1. 댓글 기능
+2. 구글 검색
+
+## 7. 느낀점
+
+개발을 처음 시작하는 단계인 나에게는 쉽지 않았다고 생각한다.
+그러나 다양한 것들을 배울 수 있었는데 배운 것들을 간단히 열거해 보면
+
+- shell command(리눅스 터미널 명령어)
+- vim
+- git command
+- markdown
+
+이와 같은 것들이 있다.
+사실 위의 4가지 모두 평소에 진입장벽을 느끼는 것들이었는데,  
+블로그를 제작하는 동안 지속적으로 사용하면서 상당히 익숙해졌다.  
+markdown 문법은 이번에 처음 접하게 되었는데 이렇게  
+익숙해질 줄 몰랐다.
+거기다가 iTerm2와 Oh My Zsh를 이용해 터미널을 꾸미고 플러그인을  
+이용해 편리한 개발환경을 구축하는 경험도 해 볼수 있었다.
+
+특히 git과 github에 조금이나마 익숙해졌다는 것이 기쁘다.
+만드는 동안은 그냥 다른 플랫폼에 블로그를 할까...생각도 했지만  
+막상 완성해보니 좋은 도전을 한것 같다.
+
+## 8. 참고자료 (Reference)
