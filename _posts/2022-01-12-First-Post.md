@@ -2,9 +2,9 @@
 title: 나의 첫 github 블로그 만들기 with Jekyll
 author:
   name: Su Kyung Kim
-  link: https://github.com/devkyung
+  link: https://github.com/sukyungdev
 date: 2022-01-12 14:55:35 +0900
-categories: [Project, Develop]
+categories: [Project, Blog]
 tags: [git]
 ---
 
@@ -124,24 +124,29 @@ rbenv PATH를 추가하지 않아서 생긴 에러이다.
 [하얀눈길님 블로그](https://www.irgroup.org/posts/jekyll-chirpy/)  
 두분 블로그가 정말 큰 도움이 되었다.
 
+> 참고로 테마에 따라 fork하는 방법으로만 적용되는 경우도 있었다.  
+> 이거는 직접 해보면서 확인하는 방법이 제일 정확한 것 같다.
+
+#### 4.1.3 그외 다른 에러
+
 ## 5. 첫 화면
 
 감동의 첫 화면
 
 <img src="https://user-images.githubusercontent.com/96860670/148946568-6556511c-e461-4b31-8c95-fdda0b329418.png" width ="960px" hight ="480px">
 
-2022년 1월 1일 부터 만들기 시작해서 1월 10일날 이 화면을 볼 수 있었다.
+2022년 1월 1일 부터 만들기 시작해서 1월 14일날 이 화면을 볼 수 있었다.
 
 ## 6. 기능 추가
 
 추후로 추가할 기능
 
-1. 댓글 기능
+1. 댓글 기능 - 2022.01.15 적용 완료
 2. 구글 검색
 
 ## 7. 느낀점
 
-개발을 처음 시작하는 단계인 나에게는 쉽지 않았다고 생각한다.
+개발을 처음 시작하는 단계인 나에게는 쉽지 않았다고 생각한다.  
 그러나 다양한 것들을 배울 수 있었는데 배운 것들을 간단히 열거해 보면
 
 - shell command(리눅스 터미널 명령어)
@@ -157,8 +162,18 @@ markdown 문법은 이번에 처음 접하게 되었는데 이렇게
 거기다가 iTerm2와 Oh My Zsh를 이용해 터미널을 꾸미고 플러그인을  
 이용해 편리한 개발환경을 구축하는 경험도 해 볼수 있었다.
 
-특히 git과 github에 조금이나마 익숙해졌다는 것이 기쁘다.
+특히 git과 github에 조금이나마 익숙해졌다는 것이 기쁘다.  
 만드는 동안은 그냥 다른 플랫폼에 블로그를 할까...생각도 했지만  
-막상 완성해보니 좋은 도전을 한것 같다.
+막상 완성해보니 좋은 도전을 한것 같다.  
+또한 블로그에 대한 애정도 배로 생기는 기분이다.
 
 ## 8. 참고자료 (Reference)
+
+[블로그 개편: 커스텀 정적사이트생성기 개발기](https://iamsang.com/blog/2020/10/10/custom-static-site-generator/)  
+[rbenv 개념 및 사용이유](https://kbs4674.tistory.com/187)  
+[https://jamstackthemes.dev/](https://jamstackthemes.dev/)  
+[Zedd0202님 블로그](https://zeddios.tistory.com/1223)  
+[캘거리 홈리스님 블로그](https://calgaryhomeless.tistory.com/1)  
+[하얀눈길님 블로그](https://www.irgroup.org/posts/jekyll-chirpy/)  
+[https://jojoldu.tistory.com/288](https://jojoldu.tistory.com/288)  
+[nil:NilClass 관련 에러](https://github.com/ruby/rdoc/issues/786)
