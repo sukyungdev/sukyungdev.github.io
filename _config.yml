@@ -23,7 +23,7 @@ title: Kyung's DevBlog # the main title
 tagline: Front-End Developer # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  It is a blog where I freely write about development topics that I am interested in.
+  하루하루 기록을 만드는 기술 블로그 / DevBlog
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://sukyungdev.github.io"
