@@ -23,9 +23,7 @@ title: Kyung's DevBlog # the main title
 tagline: Front-End Developer # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  Front-End, Developer, HTML, CSS, Git, Github
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
+  제가 관심 있는 개발 주제에 대해 자유롭게 글을 쓰는 블로그입니다. / It is a blog where I freely write about development topics that I am interested in.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://sukyungdev.github.io"
