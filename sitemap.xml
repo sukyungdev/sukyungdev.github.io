@@ -1,26 +1,138 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for post in site.posts %}
-    <url>
-      <loc>{{ site.url }}{{ post.url }}</loc>
-      {% if post.lastmod == null %}
-        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-      {% else %}
-        <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
-      {% endif %}
-      {% if post.sitemap.changefreq == null %}
-        <changefreq>weekly</changefreq>
-      {% else %}
-        <changefreq>{{ post.sitemap.changefreq }}</changefreq>
-      {% endif %}
-      {% if post.sitemap.priority == null %}
-          <priority>0.5</priority>
-      {% else %}
-        <priority>{{ post.sitemap.priority }}</priority>
-      {% endif %}
-    </url>
-  {% endfor %}
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://sukyungdev.github.io/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/categories/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/tags/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/archives/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/about/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/posts/Post-08/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/posts/Post-07/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/posts/Post-06/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/posts/Post-05/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/posts/Post-04/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/posts/Post-03/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/posts/Post-02/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/posts/Post-01/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/tags/git/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/tags/gitblog/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/tags/github/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/tags/memories/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/categories/git-github/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/categories/issue/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/categories/memories/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sukyungdev.github.io/categories/project/</loc>
+  <lastmod>2022-02-17T14:57:30+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>0.64</priority>
+</url>
+
+
 </urlset>
