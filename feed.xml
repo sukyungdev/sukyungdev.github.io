@@ -1,0 +1,3417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kyung's DevBlog</title>
+    <description>하루하루 기록을 만드는 기술 블로그 / DevBlog</description>
+    <link>https://sukyungdev.github.io/</link>
+    <atom:link href="https://sukyungdev.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 25 Nov 2022 00:02:55 +0900</pubDate>
+    <lastBuildDate>Fri, 25 Nov 2022 00:02:55 +0900</lastBuildDate>
+    <generator>Jekyll v4.3.1</generator>
+    
+      <item>
+        <title>Node.js란?</title>
+        <description>&lt;p&gt;Node.js에 관해 간단히 정리한 글입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;nodejs란&quot;&gt;Node.js란?&lt;/h2&gt;
+
+&lt;p&gt;JavaScript의 런타임 환경&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EB%9F%B0%ED%83%80%EC%9E%84_%EC%8B%9C%EC%8A%A4%ED%85%9C&quot;&gt;Runtime environment&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Node.js는 언어가 아닌 런타임 환경이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;nodejs의-특징&quot;&gt;Node.js의 특징&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;비동기 이벤트 주도 JavaScript 런타임으로써
+Node.js 는 확장성 있는 네트워크 애플리케이션을 만들 수 있도록 설계되었습니다.
+
+- Node.js 공식 문서 -
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;단일 쓰레드 기반의 비동기 이벤트 주도, 논 블로킹&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;자바스크립트의 특징(싱글 쓰레드)를 고려하여 비동기 이벤트 주도 / 논 블로킹 방식을 선택.&lt;/li&gt;
+  &lt;li&gt;싱글 쓰레드를 효율적으로 사용하기 위해 Event Loop를 사용.&lt;/li&gt;
+  &lt;li&gt;서버에 부담이 적고 개발 속도가 빠르며 npm(node package manager)로 다양한 모듈을 이용할 수 있다는 것이 장점이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;이는 오늘날 OS 스레드가 일반적으로 사용하는 동시성 모델과는 대조적입니다.
+스레드 기반의 네트워크는 상대적으로 비효율적이고 사용하기가 몹시 어렵습니다.
+게다가 잠금이 없으므로 Node.js 의 사용자는 프로세스의 교착상태에 대해서 걱정할 필요가 없습니다.
+
+- Node.js 공식문서 -
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://sukyungdev.github.io/posts/Post-27/&quot;&gt;JavaScript 동작원리&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://sukyungdev.github.io/posts/Post-21/&quot;&gt;동기 비동기 / Blocking 과 Non-Blocking&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;참고자료-reference&quot;&gt;참고자료 (reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://nodejs.org/ko/about/&quot;&gt;Node.js®에 대해서&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://hanamon.kr/nodejs-%EA%B0%9C%EB%85%90-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/&quot;&gt;[Node.js] 개념 이해하기&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://junspapa-itdev.tistory.com/3&quot;&gt;[Node.js 1강]node js 란? 장점, 단점, 어떤 웹서비스에 사용해야할까?&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;틀린점, 오타에 대한 것은 언제든지 알려주세요!&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Thu, 24 Nov 2022 14:58:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-30/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-30/</guid>
+        
+        <category>Node.js</category>
+        
+        
+        <category>Node.js</category>
+        
+      </item>
+    
+      <item>
+        <title>MPA와 SPA(SSR과 CSR)</title>
+        <description>&lt;h2 id=&quot;mpa-spa&quot;&gt;MPA? SPA?&lt;/h2&gt;
+
+&lt;h2 id=&quot;mpa이란&quot;&gt;MPA이란?&lt;/h2&gt;
+
+&lt;p&gt;두개 이상의 페이지로 구성된 application.
+interaction이 발생할 때마다 해당 링크로 이동하여 application이 다시
+새로고침되는 전통적인 방식으로 동작한다. (SSR)&lt;/p&gt;
+
+&lt;p&gt;MPA는 SSR(Server Side Rendering)방식을 채택한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;ssr이란&quot;&gt;SSR이란?&lt;/h2&gt;
+
+&lt;p&gt;서버로부터 데이터까지 완전한 HTML 파일을 받아와 페이지 전체를&lt;br /&gt;
+서버에서 렌더링하는 방식.&lt;br /&gt;
+요청에 따른 필요한 부분을 수정하지 않고 항상 새로운 페이지를 받는다.&lt;br /&gt;
+이런 이유로 앱이 다시 시작되고 화면이 깜빡인 후에 표시된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1400/1*fuDcEQEaNQXEg4S78n-lUQ.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ssr의-장점&quot;&gt;SSR의 장점&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;SEO(검색 엔진 최적화)에 유리하다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;SSR을 채택하는 MPA는 화면을 구성하는 각각의 페이지가 있기 때문에&lt;br /&gt;
+SEO에 유리하다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;빠른 초기 로딩 속도&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;서버로부터 완성된 파일을 먼저 받아오기 때문에 CSR보다 초기 로딩속도가 빠르다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;ssr의-단점&quot;&gt;SSR의 단점&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용자 경험&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;페이지를 요청할 때마다 새로고침 되기 때문에
+사용자 경험이 떨어진다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;서버 부하&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;페이지를 요청할 때마다 서버에서 페이지를 구성하는 모든 리소스를&lt;br /&gt;
+준비해야 하기 때문에 서버 부담이 증가한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;spa이란&quot;&gt;SPA이란?&lt;/h2&gt;
+
+&lt;p&gt;하나의 페이지로 구성된 application을 의미한다.
+SPA는 렌더링 방식으로 CSR을 채택한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;csr이란&quot;&gt;CSR이란?&lt;/h2&gt;
+
+&lt;p&gt;사용자의 요청에 따라 필요한 부분만 응답받아 렌더링하는 방식.
+서버에서 렌더링을 하지 않고 클라이언트에서 렌더링을 하는 방식.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1400/1*c955FMt4om-cyNU9d11OiQ.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;br /&gt;
+&lt;img src=&quot;https://miro.medium.com/max/1400/1*nmfJo2FUGSF9aL45JwG-Lg.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;csr의-장점&quot;&gt;CSR의 장점&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;빠른 속도 및 서버 부하 감소&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;CSR은 변경된 부분과 관련된 데이터만 가져오므로&lt;br /&gt;
+SSR보다 빠른 속도를 보입니다. &lt;strong&gt;(초기에는 SSR보다 느리다.)&lt;/strong&gt;&lt;br /&gt;
+또한 변경된 부분만 요청하므로 서버의 부담을 줄일 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;사용자 편의성&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;깜빡임 없는 부드러운 화면전환.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;csr의-단점&quot;&gt;CSR의 단점&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;SEO(검색 엔진 최적화)에 불리&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;서버에서 완성된 HTML을 보내주는것이 아니기 때문에 SEO에 불리하다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;느린 초기 로딩 속도&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;초기에 번들링된 JS파일을 모두 가져와야 하기 때문에 초기 로딩 속도가 느리다.&lt;br /&gt;
+ (오히려 사용자 경험을 떨어뜨릴수 있다.)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;참고자료-reference&quot;&gt;참고자료 (reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.hahus.kr/csr-ssr-spa-mpa-ede7b55c5f6f&quot;&gt;CSR, SSR, SPA, MPA? 상사한테 혼나기 전에 알아야하는 것&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://medium.com/walmartglobaltech/the-benefits-of-server-side-rendering-over-client-side-rendering-5d07ff2cefe8&quot;&gt;The Benefits of Server Side Rendering Over Client Side Rendering&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://hanamon.kr/spa-mpa-ssr-csr-%EC%9E%A5%EB%8B%A8%EC%A0%90-%EB%9C%BB%EC%A0%95%EB%A6%AC/&quot;&gt;SPA vs MPA와 SSR vs CSR 장단점 뜻정리&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;틀린점, 오타에 대한 것은 언제든지 알려주세요!&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Tue, 25 Oct 2022 15:56:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-29/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-29/</guid>
+        
+        <category>CS</category>
+        
+        
+        <category>CS</category>
+        
+      </item>
+    
+      <item>
+        <title>자료구조와 알고리즘</title>
+        <description>&lt;p&gt;자료구조와 알고리즘에 대한 간단 개념정리!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;자료구조와 알고리즘 모두 문제해결을 위해 존재한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;자료구조란&quot;&gt;자료구조란?&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;자료구조(data structure)는 컴퓨터 과학에서 효율적인 접근 및 수정을 가능케 하는 자료의 조직, 관리, 저장을 의미한다.  
+더 정확히 말해, 자료 구조는 데이터 값의 모임, 또 데이터 간의 관계, 그리고 데이터에 적용할 수 있는 함수나 명령을 의미한다.
+
+- 위키백과 -
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;데이터 값의 모임, 다수의 데이터를 규칙에 의해 나열하고 사용방법을 정의한 것.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;자료구조의-필요성&quot;&gt;자료구조의 필요성?&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;효율적으로 일을 처리하기 위해서는 기능에 적합한 자료구조를 쓰는 것이 중요하다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터를 체계적으로 저장하고 효율적으로 사용하기 위해&lt;/li&gt;
+  &lt;li&gt;메모리 공간을 효율적으로 사용하기 위해&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;자료구조의-종류&quot;&gt;자료구조의 종류&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%9E%90%EB%A3%8C_%EA%B5%AC%EC%A1%B0#%EB%B6%84%EB%A5%98&quot;&gt;자료구조 분류&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;배열, 리스트, 스택, 해쉬, 큐, 맵&lt;/p&gt;
+
+&lt;h2 id=&quot;알고리즘이란&quot;&gt;알고리즘이란?&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;알고리즘(영어: algorithm), 셈법은 수학과 컴퓨터과학, 언어학 또는 엮인 분야에서 
+어떠한 문제를 해결하기 위해 정해진 일련의 절차이다. 계산을 실행하기 위한 단계적 절차를 의미하기도 한다. 
+즉, 문제 풀이에 필요한 계산절차 또는 처리과정의 순서를 뜻한다. 프로그램명령어의 집합을 의미하기도 한다.
+
+- 위키백과 - 
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;제한된 공간과 시간 안에서 문제를 해결하는 단계적 절차&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;좋은-알고리즘이란&quot;&gt;좋은 알고리즘이란?&lt;/h3&gt;
+&lt;p&gt;제공된 데이터를 비교적 작은 자원(공간, 시간)으로 해결하는 알고리즘.&lt;/p&gt;
+
+&lt;h2 id=&quot;자료구조와-알고리즘의-관계&quot;&gt;자료구조와 알고리즘의 관계&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;일단 자료구조가 선택되면 적용할 알고리즘은 상대적으로 명확해지기 마련이다
+
+- 위키백과 -
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;자료구조 : 데이터를 어떻게 분류하고 저장할 것인가?&lt;/li&gt;
+  &lt;li&gt;알고리즘 : 데이터를 어떻게 처리하여 원하는 결과를 얻은 것인가?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;상황에 맞는 자료구조는 효율적인 알고리즘을 만드는데 필요하다.&lt;/p&gt;
+
+&lt;h2 id=&quot;참고자료-reference&quot;&gt;참고자료 (reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%9E%90%EB%A3%8C_%EA%B5%AC%EC%A1%B0#%EB%B6%84%EB%A5%98&quot;&gt;자료 구조&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98&quot;&gt;알고리즘&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://bnzn2426.tistory.com/115&quot;&gt;자료 구조(Data Structure) 개념 및 종류 정리&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://velog.io/@kmg2933/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%99%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%98-%EC%B0%A8%EC%9D%B4&quot;&gt;자료구조와 알고리즘의 차이&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://ppomelo.tistory.com/62&quot;&gt;자료구조와 알고리즘의 관계&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;틀린점, 오타에 대한 것은 언제든지 알려주세요!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Tue, 11 Oct 2022 10:20:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-28/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-28/</guid>
+        
+        <category>CS</category>
+        
+        
+        <category>CS</category>
+        
+      </item>
+    
+      <item>
+        <title>JavaScript 동작원리</title>
+        <description>&lt;p&gt;JavaScript 동작원리를 간단히 정리한 글입니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;javascript-엔진&quot;&gt;JavaScript 엔진&lt;/h2&gt;
+
+&lt;p&gt;JavaScript 코드를 실행시키는 엔진.
+대대표적으로 google의 V8이 있다.&lt;/p&gt;
+
+&lt;p&gt;엔진의 구조도&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fmloca%2Fbtrm2pc7JOW%2FK6GpHp4SMcv5YqzUd5MeVK%2Fimg.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Memory Heap은 메모리 할당이 발생.&lt;/li&gt;
+  &lt;li&gt;Call Stack은 코드 실행에 따라 호출 스택이 쌓인다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;JavaScript는 하나의 Call Stack과 하나의 Memory Heap으로 이루어진 &lt;strong&gt;싱글 스레드 언어&lt;/strong&gt;이다.&lt;br /&gt;
+한번에 하나의 명령어만 실행하는 &lt;strong&gt;동기식 언어&lt;/strong&gt;이다.&lt;/p&gt;
+
+&lt;p&gt;그러면 JavaScript는 어떻게 비동기 동작을 수행할까?&lt;/p&gt;
+
+&lt;h2 id=&quot;javascript의-비동기-작업&quot;&gt;JavaScript의 비동기 작업&lt;/h2&gt;
+
+&lt;p&gt;JavaScript는 동기식 언어이기 때문에 한 코드가 시간이 오래 걸리게 되면&lt;br /&gt;
+다음 코드 실행이 오래걸리게 된다. (Block 상태)&lt;/p&gt;
+
+&lt;p&gt;때문에 효과적인 event 관리를 위해서 &lt;strong&gt;Callback Queue, Event Loop&lt;/strong&gt;가 필요하다.&lt;/p&gt;
+
+&lt;h2 id=&quot;callback-queue-event-loop&quot;&gt;Callback Queue, Event Loop&lt;/h2&gt;
+
+&lt;p&gt;웹 브라우저나 런타임에서는 Callback Queue, Event Loop를 지원한다.(Web API 포함)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcgX3Du%2Fbtrm5yHpvxZ%2FAAVykZwbkgJRgLsFkz9Li1%2Fimg.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;자바스크립트가 비동기 함수를 만났을 경우에는 어떻게 동작할까?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;JavaScript는 비동기 함수를 처리할때, 바로 실행하지 않고 Web API로 보내고&lt;br /&gt;
+다음 작업을 실행한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Web API에 있는 비동기 함수는 비동기 작업이 끝난후 Callback Queue로 보내진다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Event Loop는 Callback Queue에 있는 함수를 Call Stack에서 처리하기 위해  &lt;br /&gt;
+Call Stack이 비어있는지 확인한다. (Call Stack이 비어있다면 Call Stack으로 보낸다.)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Call Stack에 있는 함수를 실행한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;Call Stack이 비어있어야 하는 이유?
+
+JavaScript라는 언어가 동기화 문제를 가지는 것을 피하고  
+싱글 스레드 언어라는 것을 보장해주기 위해서
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/52906975/call-stack-event-loop-why-waiting-for-empty-stack&quot;&gt;Call Stack이 비어있어야 하는 이유&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;요약&quot;&gt;요약&lt;/h2&gt;
+&lt;p&gt;JavaScript는 Call Stack과 Memory Heap이 하나씩 있는 싱글 스레드 언어지만 &lt;br /&gt;
+Callback Queue, Event Loop, Web API를 이용해 비동기 함수를 제어할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;참고자료-reference&quot;&gt;참고자료 (reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tristy.tistory.com/51&quot;&gt;[JavaScript] JavaScript 파헤치기 - 동작 원리&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://blog.toycrane.xyz/%EC%A7%84%EC%A7%9C-%EC%89%BD%EA%B2%8C-%EC%95%8C%EC%95%84%EB%B3%B4%EB%8A%94-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC-c7fbdc44cc97&quot;&gt;진짜 ! 쉽게 알아보는 자바스크립트 동작 원리&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://joshua1988.github.io/web-development/translation/javascript/how-js-works-inside-engine/&quot;&gt;자바스크립트의 동작원리: 엔진, 런타임, 호출 스택&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;틀린점, 오타에 대한 것은 언제든지 알려주세요!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Wed, 05 Oct 2022 09:15:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-27/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-27/</guid>
+        
+        <category>JavaScript</category>
+        
+        
+        <category>JavaScript</category>
+        
+      </item>
+    
+      <item>
+        <title>프로젝트 회고 - Chingu Project v40</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;8월 1일부터 9월 11일까지 진행한 Chingu Project v40 회고록입니다.&lt;br /&gt;
+약 6주간 프로젝트를 진행하였습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;chingu-project란&quot;&gt;Chingu Project란?&lt;/h2&gt;
+
+&lt;p&gt;Chingu는 외국의 개발자들과 팀을 이루어서&lt;br /&gt;
+팀 프로젝트를 경험할 수 있는 동아리입니다.&lt;br /&gt;
+&lt;a href=&quot;https://www.chingu.io/&quot;&gt;https://www.chingu.io/&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;상시 접수기는하나, 일년에 4번정도 프로젝트가 진행됩니다. (한 프로젝트는 6주 동안 진행됩니다.)&lt;br /&gt;
+접수할때 본인의 Tier를 선택할수 있는데, 저는 처음 해보았기 때문에 (HTML/CSS/JS)로&lt;br /&gt;
+진행하는 Tier 1을 선택했습니다.
+—&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://chingu-project-noteme.vercel.app/&quot;&gt;Project Demo&lt;/a&gt;  &lt;br /&gt;
+&lt;a href=&quot;https://github.com/chingu-voyages/v40-toucans-team-10&quot;&gt;Github Repository&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;진행과정&quot;&gt;진행과정&lt;/h2&gt;
+
+&lt;p&gt;프로젝트는 총 6주간 진행되며 5인으로 팀이 구성됩니다.&lt;br /&gt;
+그런데 2주후 팀원 2명이 나가버렸기 때문에, 3인 프로젝트로 진행하게 되었습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;1주--3주차&quot;&gt;1주 ~ 3주차&lt;/h3&gt;
+&lt;p&gt;프로젝트 아이디어 선정 및 기술스택 선정&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;프로젝트 아이디어&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;마크다운 인식이 가능한 JS 노트앱으로 아이디어가 선정되었습니다.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;기술스택 선정&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;HTML/CSS/JS&lt;/li&gt;
+    &lt;li&gt;Vite&lt;/li&gt;
+    &lt;li&gt;eslint&lt;/li&gt;
+    &lt;li&gt;DOMPurify&lt;/li&gt;
+    &lt;li&gt;Marked&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;프로젝트를-하면서-배운점&quot;&gt;프로젝트를 하면서 배운점&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;이전까지 제가 만든 JS프로젝트보다 규모있는 프로젝트였기 때문에&lt;br /&gt;
+확실히 JS를 다루는 것이 익숙해졌습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;ex) Delete 버튼이 새로고침을 해야만 작동하는 에러가 있었는데  &lt;br /&gt;
+  이 에러에 대한 해결 방법으로 저는 버튼을 눌렀을때 강제로 새로고침을 하는 방법을 생각했습니다.&lt;br /&gt;
+  (location.href)&lt;/p&gt;
+
+&lt;p&gt;그런데 다른 팀원은 함수를 만들어서 서비스에 무리를 주지 않는 자연스러운 방식으로&lt;br /&gt;
+  문제를 해결했습니다. 이렇게 다른 팀원의 문제해결방법을 보면서 JS를 어떻게 사용하면&lt;br /&gt;
+  효율적일지를 배웠습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;또한 이번 프로젝트는 localStorage를 적극적으로 이용한 프로젝트인데&lt;br /&gt;
+  localStorage에 대해서 공부할수 있는(localStorage의 특징, localStorage와 sessionStorage의 차이 등) 좋은 계기가 되었습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Key와 Value로 값을 저장하는 localStorage&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/193295489-134b3f8a-ffdb-4759-8768-d8710c68d006.png&quot; width=&quot;500px&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;git을 이용한 협업&lt;br /&gt;
+브랜치를 만들어 개발하고 Pull Request와 merge를 하고, 충돌을 해결하면서&lt;br /&gt;
+git을 이용한 협업을 조금이나마 경험하게 되었습니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;사실 가장 배우고 싶은 부분이었기 때문에 크게 만족했습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/193295711-85a4eb26-e730-4a3f-89b7-3b624291ae6b.png&quot; width=&quot;500px&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;프로젝트 세팅&lt;br /&gt;
+프로젝트 세팅은 다른 팀원이 했는데, 팀원이 프로젝트를 세팅한 것을 보면서&lt;br /&gt;
+eslint 세팅하는 법을 배울 수 있었고 &lt;a href=&quot;https://vitejs-kr.github.io/guide/&quot;&gt;vite&lt;/a&gt;라는 빌드 도구를 알게 되었습니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;팀 프로젝트후 진행한 Weather-Glass에서는 직접 eslint를 설치해서 사용했습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;프로젝트를-하면서-신경쓴-부분&quot;&gt;프로젝트를 하면서 신경쓴 부분&lt;/h2&gt;
+
+&lt;p&gt;일단 정해진 시간안에서 프로젝트를 완성하는 것을 가장 중요하게 생각했습니다..&lt;br /&gt;
+3주차 넘어서 개발이 시작되었기 때문입니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;완성되어서 너무 기분이 좋았습니다!!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;그리고 문서화에 신경을 썼는데, 팀의 모든 문서를 github wiki에 정리했습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/chingu-voyages/v40-toucans-team-10/wiki/v40-toucans-team-10-wiki&quot;&gt;Wiki&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;프로젝트를-하면서-아쉬웠던-부분&quot;&gt;프로젝트를 하면서 아쉬웠던 부분&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;문서화에 대한 아쉬움&lt;br /&gt;
+지금 보니 이슈에 대한 부분이 문서로 정리되었으면 좋았을것 같습니다.&lt;br /&gt;
+물론 github issues탭이 따로 있긴 하지만 언제 어떤 이슈가 있었는지&lt;br /&gt;
+정리되어 있었다면 어땠을까 하는 생각이 들어요.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;로그에 대한 아쉬움&lt;br /&gt;
+팀의 Meeting log가 2주 정도만 작성되고 그 뒤로부터는 작성되지 않았습니다.  &lt;br /&gt;
+3주차 ~ 6주차도 간단하게나마 작성되었으면 좋았을것 같아요.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;회고&lt;br /&gt;
+추가적으로 매주 프로젝트 회고록을 작성했으면 훨씬 더 좋았겠다라는 생각이 들었습니다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;코딩 컨벤션&lt;br /&gt;
+좀 더 체계적인 코딩 컨벤션에 대한 필요성을 느꼈습니다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;프로젝트-완료-후-느낀점&quot;&gt;프로젝트 완료 후 느낀점&lt;/h2&gt;
+&lt;p&gt;생각이상으로 좋은 팀원들을 만나 많을것을 배울수 있어서&lt;br /&gt;
+너무 좋았습니다💖&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;마지막에 서로 즐겁게 인사할 수 있어서 행복했습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;특히 git을 이용한 협업 부분에서 정말 귀한 경험을 했다고 생각했습니다.&lt;br /&gt;
+그리고 문서화의 중요성을 배웠습니다.&lt;br /&gt;
+다음 팀 프로젝트는 문서화에 좀 더 신경써야겠다고 생각했어요.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;봐주셔서 감사합니다.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 30 Sep 2022 14:47:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-26/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-26/</guid>
+        
+        <category>Project</category>
+        
+        
+        <category>Project</category>
+        
+      </item>
+    
+      <item>
+        <title>VScode Prettier 설정하기</title>
+        <description>&lt;p&gt;VScode의 Code Formatter인 Prettier의 기본 설정을&lt;br /&gt;
+바꿀수 있는 방법을 알게 되서 기록합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-prettier-파일-생성&quot;&gt;1. .Prettier 파일 생성&lt;/h2&gt;
+
+&lt;p&gt;파일 최상된 디렉토리에 .Prettier 파일을 생성한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-설정하기&quot;&gt;2. 설정하기&lt;/h2&gt;
+
+&lt;p&gt;다음과 같은 형식으로 본인이 설정값을 지정하면 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;{
+  &quot;singleQuote&quot;: true,
+  &quot;semi&quot;: true,
+  &quot;useTabs&quot;: false,
+  &quot;tabWidth&quot;: 2,
+  &quot;trailingComma&quot;: &quot;all&quot;,
+  &quot;printWidth&quot;: 100
+  }
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;예시 말고도 다른 설정값이 있다.&lt;/p&gt;
+
+&lt;p&gt;나의 경우, printWidth가 기본 설정값이 80으로 되어있었는데&lt;br /&gt;
+너무 줄바꿈이 빨리 일어나서 오히려 불편했다.&lt;br /&gt;
+100으로 설정하니 훨씬 편안한 코드작성이 가능했다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Setting(cmd + ,)의 Prettier을 통해 설정하는 것도 가능하다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;참고자료-reference&quot;&gt;참고자료 (reference)&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://uxgjs.tistory.com/150&quot;&gt;VScode Code Formater 인 Prettier 완벽 적용하기&lt;/a&gt; &lt;br /&gt;
+&lt;a href=&quot;https://record22.tistory.com/112&quot;&gt;Prettier 적용하기&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;틀린점, 오타에 대한 것은 언제든지 알려주세요!&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Mon, 26 Sep 2022 12:50:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-25/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-25/</guid>
+        
+        <category>Setting</category>
+        
+        
+        <category>Setting</category>
+        
+      </item>
+    
+      <item>
+        <title>프론트엔드 개발자를 준비하며-2022년 8월 회고글</title>
+        <description>&lt;p&gt;안녕하세요.&lt;br /&gt;
+8월 회고록으로 돌아왔습니다!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;8월의-목표&quot;&gt;8월의 목표.&lt;/h2&gt;
+
+&lt;p&gt;제가 정했던 8월의 목표입니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;새로운 리액트 프로젝트 만들기&lt;/li&gt;
+  &lt;li&gt;Promise에 관해 공부해보기&lt;/li&gt;
+  &lt;li&gt;style-component 배우기 (목표 달성)&lt;/li&gt;
+  &lt;li&gt;Figma 공부해보기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;8월달에 세운 목표는 9월달인 지금 하고 있습니다.&lt;br /&gt;
+8월달에 협업 프로젝트를 진행했기 때문입니다 😄&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;chingu-project-시작&quot;&gt;Chingu Project 시작&lt;/h2&gt;
+
+&lt;p&gt;Chingu Project는 다국적 개발자 분들과 함께&lt;br /&gt;
+협업을 할 수 있는 프로젝트입니다.&lt;br /&gt;
+&lt;a href=&quot;https://www.chingu.io/&quot;&gt;https://www.chingu.io/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;협업 프로젝트를 꼭 경험해보고 싶은 제게 너무 좋은 기회라는 생각이 들었고,&lt;br /&gt;
+마침 Voyage40을 모집중이었기 때문에 신청하게 되었습니다.&lt;/p&gt;
+
+&lt;p&gt;8월 1일부터 9월 12일까지 프로젝트는 진행되었습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;pull-request-and-merge&quot;&gt;Pull Request and Merge&lt;/h2&gt;
+
+&lt;p&gt;Chingu Project를 통해 처음으로 Pull request를 해보게 되었습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;처음으로 해보는 Pull Request..&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/190847724-9b366e07-ea12-4234-80ce-92a9c73947e8.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/190847783-a5ff8f4a-4b46-4d93-a8da-e21b840d630a.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;그리고 팀원들의 Approve와 코드리뷰를 받은후 merge가 되었습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/190847902-a94abeeb-54ba-449e-ba50-6f0acdfe2bf1.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;이러한 과정들이 경험하는 것이 너무 기쁘고 설렜습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;github-활동기록&quot;&gt;github 활동기록&lt;/h2&gt;
+
+&lt;p&gt;열심히 Pull request와 코드리뷰를 했더니 github 활동기록이   활발해졌습니다!!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/190848380-3d23c965-708f-46e1-bc91-fa77c3ba8e95.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;처음으로 얻은 Achievements💖&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/190848427-cdcff4c2-2315-45ba-ac0d-291ff502ee70.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;확실히-협업을-하니까-배우는-것도-엄청나지만-github자체가-풍성해지는-것을-느꼈습니다&quot;&gt;확실히 협업을 하니까 배우는 것도 엄청나지만 github자체가 풍성해지는 것을 느꼈습니다.&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;css-스터디&quot;&gt;CSS 스터디&lt;/h2&gt;
+
+&lt;p&gt;협업 프론트엔드 개발자분께서 진행하시는 CSS스터디에 참여하게 되었습니다!&lt;br /&gt;
+8월 26일부터 시작했는데 회고록을 쓰고있는 9월 17일인 지금 3주차&lt;br /&gt;
+스터디가 끝났습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;CSS에서 몰랐던 부분을 보충하면서 재미있게 스터디하고 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;8월-커밋-활동-기록&quot;&gt;8월 커밋 활동 기록&lt;/h2&gt;
+
+&lt;p&gt;8월의 커밋 활동 기록을 확인해 보았습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/190849489-542a2777-4d11-4acc-90db-26d9d2db6518.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;chingu project를 가장많이 했고 다음으로 TIL저장소에 커밋을 했네요!&lt;/p&gt;
+
+&lt;h2 id=&quot;9월의-목표&quot;&gt;9월의 목표&lt;/h2&gt;
+
+&lt;p&gt;9월달에 이루고 싶은 목표입니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;리액트 프로젝트 만들기&lt;/li&gt;
+  &lt;li&gt;Promise에 관해 공부해보기&lt;/li&gt;
+  &lt;li&gt;useCallback에 관해 공부해보기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;8월은&quot;&gt;8월은?&lt;/h2&gt;
+
+&lt;p&gt;8월은 react를 공부하고 프로젝트를 하며 바쁘게 지나갔습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;확실히-협업-프로젝트가-재미있어요&quot;&gt;확실히 협업 프로젝트가 재미있어요!!&lt;/h2&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;봐주셔서 감사합니다.&lt;br /&gt;
+9월 회고글로 돌아올께요!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 17 Sep 2022 09:13:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-24/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-24/</guid>
+        
+        <category>Memories</category>
+        
+        
+        <category>Memories</category>
+        
+      </item>
+    
+      <item>
+        <title>프론트엔드 개발자를 준비하며-2022년 7월 회고글</title>
+        <description>&lt;p&gt;안녕하세요 ⭐️&lt;br /&gt;
+7월 회고록으로 돌아왔습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;7월의-목표&quot;&gt;7월의 목표.&lt;/h2&gt;
+
+&lt;p&gt;제가 정했던 7월의 목표입니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;리액트로 프로젝트 아무거나 하나 이상 만들기(1순위)&lt;/li&gt;
+  &lt;li&gt;WebDevCurriculum에 하나 이상 커밋하기&lt;/li&gt;
+  &lt;li&gt;Promise에 관해 공부해보기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;리액트로-프로젝트-아무거나-하나-이상-만들기1순위&quot;&gt;리액트로 프로젝트 아무거나 하나 이상 만들기(1순위)&lt;/h2&gt;
+
+&lt;p&gt;리액트를 연습하기 위해 프로젝트를 2개 정도 만들었습니다!&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;To Do App&lt;br /&gt;
+새로운 언어나 라이브러리(프레임워크)를 연습하는데는 To Do App이&lt;br /&gt;
+가장 효과적이라고 생각합니다!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/184905600-58fbee41-9061-4c77-83b6-27ea25890de3.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://todo-app-react-sukyungdev.netlify.app/&quot;&gt;https://todo-app-react-sukyungdev.netlify.app/&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;가위바위보 게임&lt;br /&gt;
+간단한 가위바위보 게임을 만들어 보았습니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/184905682-0dfe5d33-9e78-4d19-bd25-4b3691ee19d0.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sukyungdev/rockPaperScissors&quot;&gt;https://github.com/sukyungdev/rockPaperScissors&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;이번에 리액트로 프로젝트를 하면서 TailWindCSS를 처음 사용해 보았는데&lt;br /&gt;
+TailWindCSS 생각이상으로 너무 좋던데요??&lt;/p&gt;
+
+&lt;p&gt;8월달에 CSS 관련 스터디를 하게 되었는데 TailWindCSS도&lt;br /&gt;
+배울 계획이라서 많이 기대됩니다!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;webdevcurriculum에-하나-이상-커밋하기&quot;&gt;WebDevCurriculum에 하나 이상 커밋하기&lt;/h2&gt;
+
+&lt;p&gt;Knowre-Dev 웹 개발 커리큘럼을 작성하고 있습니다.&lt;br /&gt;
+현재 Quest 00. 형상관리 시스템을 작성하고 있어요!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3-promise에-관해-공부해보기&quot;&gt;3. Promise에 관해 공부해보기&lt;/h2&gt;
+
+&lt;p&gt;Promise는 아니지만 동기 비동기 / Blocking 과 Non-Blocking에 대해&lt;br /&gt;
+공부해 보았습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://sukyungdev.github.io/posts/Post-21/&quot;&gt;동기 비동기 / Blocking 과 Non-Blocking&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Promise는 8월달에 공부해볼 계획입니다!&lt;/p&gt;
+
+&lt;h2 id=&quot;7월-커밋-활동-기록&quot;&gt;7월 커밋 활동 기록&lt;/h2&gt;
+
+&lt;p&gt;7월의 커밋 활동 기록을 확인해 보았습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/184906361-4e070eaa-bcaf-40c9-ac32-c3dda055b79b.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;7월달은 다양한 repository에 커밋을 했네요 💖&lt;/p&gt;
+
+&lt;h2 id=&quot;8월의-목표&quot;&gt;8월의 목표&lt;/h2&gt;
+
+&lt;p&gt;8월달에 이루고 싶은 목표입니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;새로운 리액트 프로젝트 만들기&lt;/li&gt;
+  &lt;li&gt;Promise에 관해 공부해보기&lt;/li&gt;
+  &lt;li&gt;style-component 배우기&lt;/li&gt;
+  &lt;li&gt;Figma 공부해보기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;7월은&quot;&gt;7월은?&lt;/h2&gt;
+
+&lt;p&gt;리액트 하면서 바빴던 7월달이었습니다.&lt;br /&gt;
+8월날은 더 바빠질것 같아요.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;봐주셔서 감사합니다!&lt;br /&gt;
+8월달 회고글로 돌아올께요.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 16 Aug 2022 14:39:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-23/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-23/</guid>
+        
+        <category>Memories</category>
+        
+        
+        <category>Memories</category>
+        
+      </item>
+    
+      <item>
+        <title>내가 겪은 React error - 1</title>
+        <description>&lt;p&gt;React를 하면서 만났던 error 정리.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1-npm-err&quot;&gt;1. npm err!&lt;/h2&gt;
+
+&lt;p&gt;react-beautiful-dnd 를 설치하는 도중 생긴 에러&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/184381213-c370b9db-2ac4-442b-9890-61a2be8e92dc.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;찾아보니 React 버전이 업그레이드 되면서 생긴 종속성 에러 같다.&lt;/p&gt;
+
+&lt;h2 id=&quot;해결방법&quot;&gt;해결방법&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;리액트 버전 낮추기&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;근데 이건 별로 좋은 방법이 아닌것 같다. 버전을 낮출 경우 또 다른 문제가&lt;br /&gt;
+ 발생할 수 있기 때문이다.&lt;br /&gt;
+버전을 낮추는 것보다는 다른 방법을 사용하는것이 더 간편하다.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;yarn 커맨드로 설치&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt; yarn add [모듈, 라이브러리 이름]
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;현재 사용하고 있는 맥북은 yarn 커맨드가 설치되어 있지 않아서&lt;br /&gt;
+따로 설치하고 진행하였다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://www.biew.co.kr/entry/Yarn-Package-Manager-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95%EC%82%AC%EC%9A%A9-%EA%B0%80%EC%9D%B4%EB%93%9C&quot;&gt;[ Yarn - Package Manager ] 설치 및 사용방법(사용 가이드)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://velog.io/@ddusi/Linux-4&quot;&gt;YARN에 대한 사용법 및 설치&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;npm [모듈, 라이브러리 이름] –legacy-peer-deps&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;npm을 사용할 경우 다음과 같은 커맨드를 통해 해결이 가능하다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;npm [모듈, 라이브러리 이름] --legacy-peer-deps
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://velog.io/@popawaw/npm-install-%EC%A2%85%EC%86%8D%EC%84%B1-error-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0&quot;&gt;npm install 종속성 error 해결하기&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;저는 yarn 커맨드로 해결했습니다!!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;1-htmlfor&quot;&gt;1. htmlFor&lt;/h2&gt;
+
+&lt;p&gt;to-do-app 작업을 하다가 생긴 에러&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/184381331-fe4120f3-e0d8-46fb-97b7-609916cc0813.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;작동은 되나 콘솔에 다음과 같은 에러가 출력되었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/184381479-92880b09-23cc-4a26-81c9-ad2e23fb3016.png&quot; width=&quot;500px&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;해결방법-1&quot;&gt;해결방법&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;원인은 다음과 같다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;input 태그와 label 태그를 연결시켜주기 위해 for 속성을 이용했는데&lt;br /&gt;
+이것이 오류의 원인이 되었다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;React는 JSX 문법을 쓰기 때문이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;수정&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;htmlFor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;for을 htmlFor로 바꿔주면 해결된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;참고자료-reference&quot;&gt;참고자료 (reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.biew.co.kr/entry/Yarn-Package-Manager-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95%EC%82%AC%EC%9A%A9-%EA%B0%80%EC%9D%B4%EB%93%9C&quot;&gt;[ Yarn - Package Manager ] 설치 및 사용방법(사용 가이드)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://velog.io/@ddusi/Linux-4&quot;&gt;YARN에 대한 사용법 및 설치&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://velog.io/@popawaw/npm-install-%EC%A2%85%EC%86%8D%EC%84%B1-error-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0&quot;&gt;npm install 종속성 error 해결하기&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;틀린점, 오타에 대한 것은 언제든지 알려주세요!&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Fri, 12 Aug 2022 14:55:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-22/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-22/</guid>
+        
+        <category>React</category>
+        
+        
+        <category>React</category>
+        
+      </item>
+    
+      <item>
+        <title>동기 비동기 / Blocking 과 Non-Blocking</title>
+        <description>&lt;p&gt;프로세스 수행 방식인
+동기 비동기에 관해 간단히 정리한 글입니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;동기synchronous란&quot;&gt;동기(Synchronous)란?&lt;/h2&gt;
+
+&lt;p&gt;요청 후 결과(응답)를 기다리는 것&lt;br /&gt;
+결과가 올때까지 다음 작업을 하지 않고 기다린다.&lt;/p&gt;
+
+&lt;p&gt;(작업1) - (작업2)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;작업1이 끝나서 결과가 올때까지 작업2는 대기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 결과&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 1&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 2&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 3&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;!-- &gt; Blocking - 동기식에서 답변이 올때까지 기다는 것 --&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;어떤 프로세스의 결과가 다음 프로세스와 연관이 있을때는 동기적 방식으로 해야한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;비동기asynchronous란&quot;&gt;비동기(Asynchronous)란?&lt;/h2&gt;
+
+&lt;p&gt;요청 후 바로 다음 작업을 시작한다.&lt;/p&gt;
+
+&lt;p&gt;(작업1) - (작업2)
+작업1 요청 후 결과(응답)에 상관없이 다음 작업 시작&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 결과&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 1&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 3&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 2&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;왜 결과가 이렇게 나올까?
+    &lt;ul&gt;
+      &lt;li&gt;setTimeout은 비동기 함수이기 때문이다.&lt;/li&gt;
+      &lt;li&gt;동기적 방식의 코드를 모두 처리하고 나서 비동기적 코드를 실행한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;자바스크립트의 비동기 동작 원리와 관련이 있다.&lt;br /&gt;
+비동기 방식은 자원을 효율적으로 운용 가능하다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://webclub.tistory.com/605&quot;&gt;동기와 비동기 방식(Asynchronous processing model)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;즉 동기와 비동기는 프로세스의 완료여부 확인에 차이가 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;blocking-과-non-blocking&quot;&gt;Blocking 과 Non-Blocking&lt;/h2&gt;
+
+&lt;p&gt;동기/비동기와 함께 자주 나타나는 개념.&lt;br /&gt;
+Blocking과 Non-Blocking은 제어권과 관련이 있다.&lt;/p&gt;
+
+&lt;p&gt;이해하기 쉽게 설명하자면&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Blocking : 어떤 작업이 진행 중일 때에는 (상위프로세스) 다른 작업 동시에 진행 불가능&lt;br /&gt;
+(작업을 진행중일때 제어권 상실)&lt;/li&gt;
+  &lt;li&gt;Non-Blocking : 어떤 작업이 진행 중일 때에도 (상위프로세스) 작업 동시에 진행&lt;br /&gt;
+(제어권을 상실하지 않는다.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;sync-blocking동기-블로킹&quot;&gt;Sync-Blocking(동기-블로킹)&lt;/h3&gt;
+
+&lt;p&gt;동기 방식 - 작업은 순차적으로 진행&lt;br /&gt;
+블로킹 방식 - 다른 작업 동시 진행 불가능&lt;/p&gt;
+
+&lt;h3 id=&quot;sync-nonblocking동기-논-블로킹&quot;&gt;Sync-NonBlocking(동기-논 블로킹)&lt;/h3&gt;
+
+&lt;p&gt;작업은 순차적으로 진행되나 상위 프로세스는 중간중간 자신의 작업 수행 가능.&lt;/p&gt;
+
+&lt;h3 id=&quot;async-blocking비동기-블로킹&quot;&gt;Async-Blocking(비동기-블로킹)&lt;/h3&gt;
+
+&lt;p&gt;참고 자료&lt;br /&gt;
+&lt;a href=&quot;https://evan-moon.github.io/2019/09/19/sync-async-blocking-non-blocking/&quot;&gt;동기(Synchronous)는 정확히 무엇을 의미하는걸까?&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;async-nonblocking비동기-논블로킹&quot;&gt;Async-NonBlocking(비동기-논블로킹)&lt;/h3&gt;
+
+&lt;p&gt;동기 방식 - 작업은 완료여부와 상관없이 진행&lt;br /&gt;
+블로킹 방식 - 다른 작업 동시 진행 가능&lt;/p&gt;
+
+&lt;h2 id=&quot;참고자료-reference&quot;&gt;참고자료 (reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://velog.io/@nittre/%EB%B8%94%EB%A1%9C%ED%82%B9-Vs.-%EB%85%BC%EB%B8%94%EB%A1%9C%ED%82%B9-%EB%8F%99%EA%B8%B0-Vs.-%EB%B9%84%EB%8F%99%EA%B8%B0&quot;&gt;블로킹 Vs. 논블로킹, 동기 Vs. 비동기&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://poiemaweb.com/js-async&quot;&gt;동기식 처리 모델 vs 비동기식 처리 모델&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://evan-moon.github.io/2019/09/19/sync-async-blocking-non-blocking/&quot;&gt;동기(Synchronous)는 정확히 무엇을 의미하는걸까?&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://velog.io/@daybreak/%EB%8F%99%EA%B8%B0-%EB%B9%84%EB%8F%99%EA%B8%B0-%EC%B2%98%EB%A6%AC&quot;&gt;동기, 비동기 처리&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://ljtaek2.tistory.com/142&quot;&gt;자바스크립트 - 동기(Synchronous)? 비동기(asynchronous)?&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;틀린점, 오타에 대한 것은 언제든지 알려주세요!&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Fri, 05 Aug 2022 11:27:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-21/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-21/</guid>
+        
+        <category>CS</category>
+        
+        
+        <category>CS</category>
+        
+      </item>
+    
+      <item>
+        <title>프론트엔드 개발자를 준비하며-2022년 6월 회고글</title>
+        <description>&lt;p&gt;안녕하세요!&lt;br /&gt;
+6월 회고록으로 돌아왔습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;벌써 7월 중순..&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;6월의-목표&quot;&gt;6월의 목표.&lt;/h2&gt;
+
+&lt;p&gt;제가 정했던 6월의 목표입니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;DOM, API에 관해 공부해보기&lt;/li&gt;
+  &lt;li&gt;자바스크립트 이용한 프로젝트 하나더 만들어 보기&lt;/li&gt;
+  &lt;li&gt;ES6 문법 익숙해지기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;dom-api에-관해-공부해보기&quot;&gt;DOM, API에 관해 공부해보기&lt;/h2&gt;
+
+&lt;p&gt;DOM과 API에 관해 공부하고 관련 내용을 블로그에 정리했습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://sukyungdev.github.io/posts/Post-18/&quot;&gt;DOM(Document object model) 개념 정리&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://sukyungdev.github.io/posts/Post-19/&quot;&gt;API개념 정리&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;개인적으로 인프런의 무료강의가 도움이 많이 되었습니다.(짐코딩님 강의)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;자바스크립트-이용한-프로젝트-하나더-만들어-보기&quot;&gt;자바스크립트 이용한 프로젝트 하나더 만들어 보기&lt;/h2&gt;
+
+&lt;p&gt;바닐라 JS를 이용한 프로젝트를 두개 더 만들었습니다!
+하나는 가장 기본적인 투두리스트입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sukyungdev/Todo-List&quot;&gt;Todo-List&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/174079136-fe58c5c5-4349-4211-b0a0-ff58a80e3a00.png&quot; alt=&quot;img&quot; width=&quot;300px&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;다른 하나는 뉴스 api를 fetch를 이용해 받아와 만든 뉴스 웹사이트입니다!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://sudev-news.netlify.app/&quot;&gt;NewsWebSite&lt;/a&gt;&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/175325036-f6cc3910-9361-4553-87e1-7ac9d50d458f.png&quot; alt=&quot;img&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;프로젝트라고 할만한 프로젝트를 완성해서 엄청 뿌듯했습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;앞으로도 완성도를 높일 계획입니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3-es6-문법-익숙해지기&quot;&gt;3. ES6 문법 익숙해지기&lt;/h2&gt;
+
+&lt;p&gt;5월보다는 익숙해진것 같습니다!(구조분해할당, 스프레드 연산자)&lt;/p&gt;
+
+&lt;p&gt;그런데 리액트를 공부하면 es6 문법이 빠르게 익숙해집니다!&lt;/p&gt;
+
+&lt;p&gt;왜 쓰는지 느낌이 확 오기 때문에 es6 문법이 헷갈리신다면&lt;br /&gt;
+리액트와 함께 공부하시는 것을 추천드려요.&lt;br /&gt;
+훨씬 감이 빨리 와요!!&lt;/p&gt;
+
+&lt;h2 id=&quot;６월-커밋-활동-기록&quot;&gt;６월 커밋 활동 기록&lt;/h2&gt;
+
+&lt;p&gt;６월의 커밋 활동 기록을 확인해 보았습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/179360110-3e56c019-1a14-4b02-9829-3846c335cabe.png&quot; width=&quot;500px&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;6월달은 TIL, 투두리스트와 뉴스웹 이렇게 고르게 커밋을 했어요!&lt;/p&gt;
+
+&lt;h2 id=&quot;7월의-목표&quot;&gt;7월의 목표&lt;/h2&gt;
+
+&lt;p&gt;7월달에 이루고 싶은 목표입니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;리액트로 프로젝트 아무거나 하나 이상 만들기(1순위)&lt;/li&gt;
+  &lt;li&gt;WebDevCurriculum에 하나 이상 커밋하기&lt;/li&gt;
+  &lt;li&gt;Promise에 관해 공부해보기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;6월은&quot;&gt;6월은?&lt;/h2&gt;
+
+&lt;p&gt;6월은 개인프로젝트를 하느라 나름대로 바쁘게 움직였습니다.&lt;/p&gt;
+
+&lt;p&gt;7월달은 더 바쁠것 같아요.(리액트!)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;봐주셔서 감사합니다.&lt;br /&gt;
+7월 회고글로 돌아올께요.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 16 Jul 2022 15:15:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-20/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-20/</guid>
+        
+        <category>Memories</category>
+        
+        
+        <category>Memories</category>
+        
+      </item>
+    
+      <item>
+        <title>API개념 정리</title>
+        <description>&lt;p&gt;api에 관해 정리한 글입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;api-란&quot;&gt;API 란?&lt;/h2&gt;
+
+&lt;p&gt;API
+Application Programming Interface&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;API는 Application Programming Interface(애플리케이션 프로그램 인터페이스)의 줄임말입니다. API의 맥락에서 애플리케이션이라는 단어는 고유한 기능을 가진 모든 소프트웨어를 나타냅니다. 인터페이스는 두 애플리케이션 간의 서비스 계약이라고 할 수 있습니다. 이 계약은 요청과 응답을 사용하여 두 애플리케이션이 서로 통신하는 방법을 정의합니다. API 문서에는 개발자가 이러한 요청과 응답을 구성하는 방법에 대한 정보가 들어 있습니다.
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/ko/what-is/api/&quot;&gt;API란 무엇인가요?&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;애플리케이션(응용 프로그램, 소프트웨어)가 데이터를 이용해 소통하기 위한 인터페이스.(상호작용)&lt;/p&gt;
+
+&lt;p&gt;예시)
+뉴스 애플리케이션을 만들고 싶으면 뉴스 데이터를 요청(request)하고 응답(response)받아서&lt;br /&gt;
+뉴스데이터가 오면 데이터를 화면에 표현해서 뉴스 애플리케이션을 만들 수 있다.&lt;/p&gt;
+
+&lt;p&gt;사용자 인터페이스 -&amp;gt; User Interface&lt;br /&gt;
+애플리케이션 인터페이스 -&amp;gt; Application Programming Interface&lt;/p&gt;
+
+&lt;h2 id=&quot;http-api란&quot;&gt;HTTP API란?&lt;/h2&gt;
+
+&lt;p&gt;HTTP 방식으로 소통하는 api&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;일반적으로 대부분의 API는 HTTP방식으로 소통한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;http&quot;&gt;HTTP&lt;/h3&gt;
+
+&lt;p&gt;인터넷상에서 데이터를 주고받을때 사용하는 프로토콜(통신규약)&lt;/p&gt;
+
+&lt;h2 id=&quot;rest-api란&quot;&gt;REST API란?&lt;/h2&gt;
+
+&lt;p&gt;REST(Representational State Transfer) API&lt;br /&gt;
+REST 원칙을 준수해서 만든 API.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;HTTP를 더 잘 활용하기 위한 API&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;restrepresentational-state-transfer&quot;&gt;REST(Representational State Transfer)&lt;/h3&gt;
+
+&lt;p&gt;HTTP을 활용한 아키텍처(설계, 제작을 위한 패턴).&lt;br /&gt;
+HTTP를 활용한 원칙.&lt;/p&gt;
+
+&lt;h2 id=&quot;참고자료-reference&quot;&gt;참고자료 (reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://tibetsandfox.tistory.com/19&quot;&gt;REST(Representational State Transfer)란?&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://shlee0882.tistory.com/107&quot;&gt;HTTP 프로토콜이란?&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://bentist.tistory.com/37&quot;&gt;API, HTTP API, REST API 차이&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;틀린점, 오타에 대한 것은 언제든지 알려주세요!&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Wed, 13 Jul 2022 10:15:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-19/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-19/</guid>
+        
+        <category>CS</category>
+        
+        
+        <category>CS</category>
+        
+      </item>
+    
+      <item>
+        <title>DOM(Document object model) 개념 정리</title>
+        <description>&lt;p&gt;DOM의 개념에 관해 정리한 글입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;dom이란&quot;&gt;DOM이란?&lt;/h2&gt;
+
+&lt;p&gt;Document Object Model의 약자.&lt;br /&gt;
+스크립트 언어(JavaScript)로 HTML 요소를 제어할 수 있도록 웹문서를 객체화 한것.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;HTML 문서에 접근하기 위한 인터페이스(API)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;javascript의-탄생배경&quot;&gt;JavaScript의 탄생배경&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;웹 문서를 다루기 위해 탄생&lt;/li&gt;
+  &lt;li&gt;어떻게 JavaScript는 웹 문서를 인식하는 걸까?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;브라우저 안에는 웹 문서를 해석할수 있는 렌더링 엔진이 있다.&lt;br /&gt;
+렌더링 엔진은 웹 문서를 해석하고 &lt;strong&gt;객체화&lt;/strong&gt; 하여 JavaScript가 접근할 수 있도록 한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;JavaScript는 HTML문서를 문자열로 인식한다.&lt;br /&gt;
+HTML을 javaScript가 제어할 수 있도록 객체의 형태로 변경이 필요하다.(DOMParser)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;문서의 객체화
+&lt;strong&gt;Document Object Model(DOM)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;dom의-구조&quot;&gt;DOM의 구조&lt;/h2&gt;
+
+&lt;h3 id=&quot;tree&quot;&gt;Tree&lt;/h3&gt;
+
+&lt;p&gt;HTML요소는 계층관계로 이루어져 있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/head&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/div&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/body&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/html&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이러한 구조를 DOM Tree라고 한다.&lt;br /&gt;
+&lt;a href=&quot;https://ko.javascript.info/dom-nodes&quot;&gt;DOM 트리&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;node&quot;&gt;node&lt;/h3&gt;
+
+&lt;p&gt;DOM Tree의 각각의 요소. (document, html, body…)&lt;br /&gt;
+각각의 node에 접근해서 HTML을 제어 가능.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;document는 DOM Tree의 최상위 노드&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;추가-정보&quot;&gt;추가 정보&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DOM은 HTML과 완전히 동일하지 않다.&lt;/li&gt;
+  &lt;li&gt;텍스트, 공백도 노드에 포함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;참고자료-reference&quot;&gt;참고자료 (reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ko.javascript.info/dom-nodes&quot;&gt;DOM 트리&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://wit.nts-corp.com/2019/02/14/5522&quot;&gt;(번역) DOM은 정확히 무엇일까?&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://velog.io/@yejineee/DOM%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-DOM-Node%EC%99%80-Element%EC%9D%98-%EC%B0%A8%EC%9D%B4&quot;&gt;DOM은 무엇인가? DOM Node와 Element의 차이&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;틀린점, 오타에 대한 것은 언제든지 알려주세요!&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Tue, 05 Jul 2022 13:47:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-18/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-18/</guid>
+        
+        <category>JavaScript</category>
+        
+        
+        <category>JavaScript</category>
+        
+      </item>
+    
+      <item>
+        <title>Javascript Hoisting(호이스팅)</title>
+        <description>&lt;p&gt;호이스팅에 관해 정리한 글입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;hoisting-이란&quot;&gt;Hoisting 이란?&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hoisting의 의미 : 들어 올리기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;변수나 함수를 해당 변수 및 함수 유효 범위의 최상단에 선언하는 것.&lt;br /&gt;
+Javascript parsing 단계에서 재정렬 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;JavaScript에서 호이스팅(hoisting)이란, 인터프리터가
+변수와 함수의 메모리 공간을 선언 전에 미리 할당하는 것을 의미합니다.
+
+var로 선언한 변수의 경우 호이스팅 시 undefined로 변수를 초기화합니다.
+반면 let과 const로 선언한 변수의 경우 호이스팅 시 변수를 초기화하지 않습니다.
+
+- mdn -
+
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;물리적으로 코드가 이동하는 것이 아니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;변수-호이스팅&quot;&gt;변수 호이스팅&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;변수 호이스팅은 var로 선언한 변수에서만 일어난다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// undefined&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;함수 내부에서 변수가 선언되었을 경우, 선언만 함수의 최상위로 이동하고&lt;br /&gt;
+함수 외부에서 선언되었을 때는 전역 범위에서 최상위로 이동한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;var로 선언한 변수는 호이스팅시 undefined로 변수를 초기화 한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//undefined&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//2&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;let과-const로-선언한-변수도-호이스팅의-대상이지만-호이스팅의-영향을-받지-않는다&quot;&gt;let과 const로 선언한 변수도 호이스팅의 대상이지만, 호이스팅의 영향을 받지 않는다.&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#temporal_dead_zone_tdz&quot;&gt;Temporal dead zone (TDZ)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;함수-호이스팅&quot;&gt;함수 호이스팅&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;함수 선언식의 경우에만 호이스팅이 일어난다. 함수 표현식은 호이스팅이 일어나지 않는다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;함수 선언식&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nx&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// hello&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;함수 표현식&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nx&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// hello is not a function(undefined)&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hello&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;참고자료-reference&quot;&gt;참고자료 (reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Glossary/Hoisting&quot;&gt;호이스팅&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://velog.io/@surim014/JavaScript%EC%97%90%EC%84%9C%EC%9D%98-Hoisting%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80&quot;&gt;JavaScript - Hoisting(호이스팅)에 대해 알아보자&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://error999.tistory.com/3&quot;&gt;Javascript - Hoisting(호이스팅)이란?&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://multifrontgarden.tistory.com/62&quot;&gt;#01. JavaScript의 Parsing - 01&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://gmlwjd9405.github.io/2019/04/22/javascript-hoisting.html&quot;&gt;[JavaScript] 호이스팅(Hoisting)이란&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;틀린점, 오타에 대한 것은 언제든지 알려주세요!&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sat, 02 Jul 2022 14:43:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-17/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-17/</guid>
+        
+        <category>JavaScript</category>
+        
+        
+        <category>JavaScript</category>
+        
+      </item>
+    
+      <item>
+        <title>JavaScript 삼항 연산자</title>
+        <description>&lt;h1 id=&quot;삼항연산자&quot;&gt;삼항연산자&lt;/h1&gt;
+
+&lt;p&gt;헷갈릴수 있는 JavaScript 삼항연산자에 관해 정리한 글입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;목차&quot;&gt;목차&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;1. 삼항연산자란?
+2. 삼항연산자 구조
+3. 중복삼항연산자(연속된 조건문)
+4. 참고자료 (Reference)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;삼항연산자란&quot;&gt;삼항연산자란?&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;조건부 삼항 연산자는 JavaScript에서 세 개의 피연산자를 취할 수 있는 유일한 연산자입니다. 맨 앞에 조건문 들어가고. 그 뒤로 물음표(?)와 조건이 참truthy이라면 실행할 식이 물음표 뒤로 들어갑니다. 바로 뒤로 콜론(:)이 들어가며 조건이 거짓falsy이라면 실행할 식이 마지막에 들어갑니다. 보통 if 명령문의 단축 형태로 쓰입니다.
+
+- mdn -
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;즉 간단히 말하면 if문의 단축형태로 사용할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;삼항연산자-구조&quot;&gt;삼항연산자 구조&lt;/h2&gt;
+
+&lt;p&gt;조건문 ? 참일때 실행하는 식 : 거짓일때 실행하는 식&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 조건문 ? 참일때 실행하는 식 : 거짓일때 실행하는 식&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//조건문이 true기 때문에 7이 나온다.&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;null, NaN, 0, “”, undefined는 조건문의 false 값으로 사용 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1이 나온다.&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;때문에 null을 판별할때도 쓰일수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-중복삼항연산자연속된-조건문&quot;&gt;2. 중복삼항연산자(연속된 조건문)&lt;/h2&gt;
+
+&lt;p&gt;if…else if…else if…else와 같은 연속된 조건문도 삼항연산자로
+표현이 가능하다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;구조&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(조건문1) ? 참 : (조건문2) ? 참 : (조건문3) ? 참 : 거짓(마지막 값)&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 아래의 코드와 동일한 결과가 나온다.&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// if (num &amp;gt; a){&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   num -= 3;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// } else if(num &amp;gt; b){&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   num -= 2;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// } else if (num &amp;gt; c){&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   num -= 1&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// } else {&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//   num += 20;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// };&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 21이 나온다.&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;5-참고자료-reference&quot;&gt;5. 참고자료 (Reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Conditional_Operator&quot;&gt;삼항 조건 연산자&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 20 Jun 2022 14:57:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-16/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-16/</guid>
+        
+        <category>JavaScript</category>
+        
+        
+        <category>JavaScript</category>
+        
+      </item>
+    
+      <item>
+        <title>프론트엔드 개발자를 준비하며-2022년 5월 회고글</title>
+        <description>&lt;p&gt;안녕하세요 sukyungdev입니다.&lt;/p&gt;
+
+&lt;p&gt;벌써 여름이 되었어요!&lt;br /&gt;
+5월을 회고해 보겠습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;5월의-목표&quot;&gt;5월의 목표.&lt;/h2&gt;
+
+&lt;p&gt;제가 정했던 5월의 목표입니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;자바스크립트를 이용한 프로젝트(뭐든지!) 만들어 보기.&lt;/li&gt;
+  &lt;li&gt;DOM, API에 관해 공부해보기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;자바스크립트를-이용한-프로젝트뭐든지-만들어-보기&quot;&gt;자바스크립트를 이용한 프로젝트(뭐든지!) 만들어 보기.&lt;/h2&gt;
+
+&lt;p&gt;자바스크립트를 이용하여 작은 프로젝트를 만들어 보았습니다!&lt;br /&gt;
+바로 숫자 추측 게임입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/172857786-f3760c20-71e0-4eb9-bfa8-e884ebdae9d7.png&quot; alt=&quot;NumberGuessGameImg&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;demo site : &lt;a href=&quot;https://numberguessgame-sukyungdev.netlify.app/&quot;&gt;https://numberguessgame-sukyungdev.netlify.app/&lt;/a&gt;&lt;br /&gt;
+github repository : &lt;a href=&quot;https://github.com/sukyungdev/NumberGuessGame&quot;&gt;https://github.com/sukyungdev/NumberGuessGame&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;사용자가 7번 안에 임의의 숫자를 맞추는 게임입니다.&lt;br /&gt;
+UI는 평소에 구현해보고 싶었던 Glassmorphism을 구현해 보았어요.&lt;/p&gt;
+
+&lt;p&gt;Glassmorphism에 관해서는 아래글을 읽어보면 좋을것 같습니다.&lt;br /&gt;
+&lt;a href=&quot;https://uxdesign.cc/glassmorphism-in-user-interfaces-1f39bb1308c9&quot;&gt;Glassmorphism in user interfaces&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;프로젝트를 통해서 배운게 많았습니다.&lt;br /&gt;
+특히 남이 봐도 읽기 편한 코드를 작성할려면 어떻게 해야할까..라는 생각을 많이 했습니다.&lt;/p&gt;
+
+&lt;p&gt;그리고 생각하지 못한 버그들 (chance 카운트 문제, 인터넷 익스플로러 호환 문제)을 겪었습니다.&lt;br /&gt;
+이러한 문제들을 해결하는게 배워가는 과정인것 같아요.&lt;/p&gt;
+
+&lt;h2 id=&quot;dom-api에-관해-공부해보기&quot;&gt;DOM, API에 관해 공부해보기&lt;/h2&gt;
+
+&lt;p&gt;DOM, API에 관해서는 아직 공부가 덜 된것 같습니다.&lt;br /&gt;
+6월달에 제대로 공부할 계획입니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;지금 ES6문법을 공부중인데 계속 헷갈리고 있습니다. 빨리 익숙해지기를..&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;5월-커밋-활동-기록&quot;&gt;5월 커밋 활동 기록&lt;/h2&gt;
+
+&lt;p&gt;5월의 커밋 활동 기록을 확인해 보았습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/172858014-adcc59e3-ff8e-4e7b-a6aa-c93d95829c64.png&quot; width=&quot;500px&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;의외였던게 ProjectCollection_CSS가 가장 많네요??&lt;br /&gt;
+기억에는 NumberGuessGame이 남아 있습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;6월의-목표&quot;&gt;6월의 목표&lt;/h2&gt;
+
+&lt;p&gt;6월달에 이루고 싶은 목표입니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;DOM, API에 관해 공부해보기&lt;/li&gt;
+  &lt;li&gt;자바스크립트 이용한 프로젝트 하나더 만들어 보기&lt;/li&gt;
+  &lt;li&gt;ES6 문법 익숙해지기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;5월은&quot;&gt;5월은?&lt;/h2&gt;
+
+&lt;p&gt;드디어 여름의 시작으로 들어섰습니다!!&lt;br /&gt;
+6월 회고글로 돌아올께요.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;봐주셔서 감사합니다.⭐️&lt;/p&gt;
+</description>
+        <pubDate>Thu, 09 Jun 2022 13:30:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-15/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-15/</guid>
+        
+        <category>Memories</category>
+        
+        
+        <category>Memories</category>
+        
+      </item>
+    
+      <item>
+        <title>google search console에서 sitemap 갱신이 안되는 상황</title>
+        <description>&lt;h2 id=&quot;목차&quot;&gt;목차&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;1. 문제상황
+2. 답변
+3. 결론
+4. 참고자료 (Reference)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;안녕하세요!😄&lt;br /&gt;
+오늘은 제가 경험한 google search console 사이트맵 관련 문제에 관해&lt;br /&gt;
+글을 작성했습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-문제상황&quot;&gt;1. 문제상황&lt;/h2&gt;
+
+&lt;p&gt;구글 검색 엔진이 1월 25일 이후 사이트맵을 읽지 않는 문제가 있었습니다.&lt;br /&gt;
+사이트는 블로그 사이트맵입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/171213511-cc57980a-fdb1-472e-98da-a2595045682c.png&quot; alt=&quot;&quot; width=&quot;550px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;블로그 주소 :&lt;a href=&quot;https://sukyungdev.github.io/&quot;&gt;https://sukyungdev.github.io/&lt;/a&gt;&lt;br /&gt;
+사이트맵 주소 :&lt;a href=&quot;https://sukyungdev.github.io/sitemap&quot;&gt;https://sukyungdev.github.io/sitemap&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;그리고 검색엔진에도 블로그 url외의 다른 url이 등록되지 않았습니다.&lt;br /&gt;
+이 상황을 해결하기 위해 여러 방법을 시도했습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;사이트맵 다시 제출&lt;/li&gt;
+  &lt;li&gt;사이트맵 재생성(혹시 사이트맵 문제인가 싶어서 재생성을 했습니다.)&lt;/li&gt;
+  &lt;li&gt;구글 서치 콘솔에 사이트맵 읽어주기 요청&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;하지만 3개월 넘도록 변함이 없어서 4월 29일에&lt;br /&gt;
+search console 고객센터에 질문을 올렸습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-답변&quot;&gt;2. 답변&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;아래 url로 가시면 답변 본문을 보실수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://support.google.com/webmasters/thread/161619569?hl=ko#&quot;&gt;https://support.google.com/webmasters/thread/161619569?hl=ko#&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;생각보다 빨리 답변을 받았습니다.
+간단하게 요약하면&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사이트맵 갱신의 경우 외부에서 간섭 불가능.&lt;/li&gt;
+  &lt;li&gt;기다리는 것이 방법.&lt;/li&gt;
+  &lt;li&gt;사이트맵이 필요하지 않는 사이트도 있다.&lt;br /&gt;
+(현재 제 블로그에선 사이트맵이 크게 유의미하지 않는 것 같습니다.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-결론&quot;&gt;3. 결론&lt;/h2&gt;
+
+&lt;p&gt;결국 기다려야 한다는 것을 알게 되었습니다..&lt;br /&gt;
+그래서 마음 편하게 잊고 있었는데요.&lt;/p&gt;
+
+&lt;p&gt;그런데 얼마전에 google search console에 방문했을때,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/171213997-64fef60d-1ba3-4237-9387-3451a7cc0750.png&quot; alt=&quot;&quot; width=&quot;300px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이러한 알림과 메일이 왔습니다. 이와 함께&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/171214569-937d04a6-f180-4cd0-ba98-10e891db9ed4.png&quot; alt=&quot;&quot; width=&quot;550px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;제 사이트의 아카이브 url이 구글 검색 엔진에 등록이 되었습니다😍&lt;/p&gt;
+
+&lt;p&gt;이를 볼때 google search console은 클릭수/조회수 기준으로&lt;br /&gt;
+검색엔진 등록여부를 결정하는 것 같습니다.&lt;/p&gt;
+
+&lt;p&gt;제가 블로그를 시작한 날이 1월 중순정도 되는데, 5월 말에 알림을 받았으니&lt;br /&gt;
+의미있는 조회수가 나올때까지 4~5개월 정도가 걸렸네요.&lt;/p&gt;
+
+&lt;p&gt;혹시 저와 같은 상황의 분이 계시다면 그냥 마음 편히 기다리시는 것이 방법인것 같습니다.&lt;/p&gt;
+
+&lt;p&gt;봐주셔서 감사합니다.⭐️&lt;/p&gt;
+</description>
+        <pubDate>Tue, 31 May 2022 15:45:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-14/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-14/</guid>
+        
+        <category>gitblog</category>
+        
+        
+        <category>Issue</category>
+        
+        <category>Blog</category>
+        
+      </item>
+    
+      <item>
+        <title>프론트엔드 개발자를 준비하며-2022년 4월 회고글</title>
+        <description>&lt;p&gt;안녕하세요 sukyungdev⭐️ 입니다.&lt;/p&gt;
+
+&lt;p&gt;벌써 5월 말이 다되가고 있네요!
+지나간 4월을 회고해 보겠습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;4월의-목표&quot;&gt;4월의 목표.&lt;/h2&gt;
+
+&lt;p&gt;제가 정했던 4월의 목표입니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;github readme 재정비하기&lt;/li&gt;
+  &lt;li&gt;자바스크립트 기초 문법 끝내기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;github-readme-재정비하기&quot;&gt;github readme 재정비하기&lt;/h2&gt;
+
+&lt;p&gt;원래 제 readme도 나쁘진 않았지만 제가 개발의 어떤 분야에 관심이 있는지,&lt;br /&gt;
+현재 어떤것을 배우고 있는지 보시는 분들이 모를것 같았습니다.&lt;/p&gt;
+
+&lt;p&gt;그래서 readme를 재정비 했습니다!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://butter-shower.tistory.com/142&quot;&gt;매력적인 깃허브 프로필을 만들어보아요 🌻&lt;/a&gt;&lt;br /&gt;
+위의 블로그 포스팅을 참고하여 readme를 만들어 보았습니다.&lt;/p&gt;
+
+&lt;p&gt;특히 &lt;a href=&quot;https://rahuldkjain.github.io/gh-profile-readme-generator/&quot;&gt;GitHub Profile README Generator&lt;/a&gt;가&lt;br /&gt;
+도움이 되었습니다.&lt;br /&gt;
+github를 바꾸고 싶은데 어떻게 바꿔야 할지 모르겠다 하신다면 추천드려요.&lt;/p&gt;
+
+&lt;p&gt;그렇게 readme를 만들었습니다.&lt;br /&gt;
+앞으로 개발을 하면서 조금씩 추가할 생각입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/169545879-2030a89f-6c75-4032-a0cc-9aff47707910.png&quot; width=&quot;500px&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sukyungdev&quot;&gt;https://github.com/sukyungdev&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;자바스크립트-기초-문법-끝내기&quot;&gt;자바스크립트 기초 문법 끝내기&lt;/h3&gt;
+
+&lt;p&gt;자바스크립트의 기초 문법을 학습했습니다..(변수, 배열, 객체, 함수…)&lt;br /&gt;
+이제부터는 작은 프로젝트를 만들어볼 계획입니다.😄&lt;/p&gt;
+
+&lt;h3 id=&quot;projectcollection_css&quot;&gt;ProjectCollection_CSS&lt;/h3&gt;
+
+&lt;p&gt;4월에 ProjectCollection_CSS라는 프로젝트를 본격적으로 시작하였습니다.
+HTML/CSS로 제작한 웹 프로젝트 입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/169552538-d23b6e98-198b-4615-bcf8-f04709f349e5.png&quot; width=&quot;500px&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://sudev-cssproject.netlify.app/&quot;&gt;ProjectCollection_CSS&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;현재까지는 frontendmento의 challenge들을 구현했는데요!&lt;br /&gt;
+생각보다 고려해야 할 것들이 많았습니다.&lt;br /&gt;
+(특히 position과 가상요소, semantic tag관련)&lt;/p&gt;
+
+&lt;p&gt;이 프로젝트를 하면서 HTML/CSS에 관한 다양한 컴포넌트를&lt;br /&gt;
+구현할 수 있어서 좋았습니다.&lt;/p&gt;
+
+&lt;p&gt;앞으로도 조금씩 해나갈 예정입니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;4월-커밋-활동-기록&quot;&gt;4월 커밋 활동 기록&lt;/h2&gt;
+
+&lt;p&gt;4월의 커밋 활동 기록을 확인해 보았습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/169549799-95fcabb5-904d-4753-905e-b8cf8ebee0f6.png&quot; width=&quot;500px&quot; alt=&quot;&quot; /&gt;
+ProjectCollection_CSS 저장소에 가장 많이 커밋했습니다.(50회)&lt;/p&gt;
+
+&lt;p&gt;여담이지만 프로젝트에 관련 커밋을 할때 가장 재밌는거 같아요!😊&lt;/p&gt;
+
+&lt;h2 id=&quot;5월의-목표&quot;&gt;5월의 목표&lt;/h2&gt;
+
+&lt;p&gt;5월달에 이루고 싶은 목표입니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;자바스크립트를 이용한 프로젝트(뭐든지!) 만들어 보기.&lt;/li&gt;
+  &lt;li&gt;DOM, API에 관해 공부해보기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;4월은&quot;&gt;4월은?&lt;/h2&gt;
+
+&lt;p&gt;점점 따뜻해지고 있는 4월입니다.
+앞으로 더 분발해야겠다는 다짐을 했습니다.&lt;/p&gt;
+
+&lt;p&gt;5월 회고글로 돌아오겠습니다.(이번엔 6월 초순 안으로..)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;봐주셔서 감사합니다.⭐️&lt;/p&gt;
+</description>
+        <pubDate>Fri, 20 May 2022 14:50:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-13/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-13/</guid>
+        
+        <category>Memories</category>
+        
+        
+        <category>Memories</category>
+        
+      </item>
+    
+      <item>
+        <title>프론트엔드 개발자를 준비하며-2022년 3월 회고글</title>
+        <description>&lt;p&gt;지금이 4월 20일인데 이제 3월 회고글을 쓰네요.(너무 바빴습니다.😳)&lt;br /&gt;
+지나간 3월을 회고해 보겠습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3월의-목표&quot;&gt;3월의 목표&lt;/h2&gt;
+
+&lt;p&gt;제가 3월달 목표를 이렇게 잡았습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;CSS 기초 개념 학습하기&lt;/li&gt;
+  &lt;li&gt;모각코 무사히 수료하기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;1번은 무사히 완료했습니다.😉&lt;br /&gt;
+다만 2번은 다음을 기약해야할것 같아요.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;어려웠던-알고리즘&quot;&gt;어려웠던 알고리즘&lt;/h2&gt;
+
+&lt;p&gt;3월달 네이버 카페 코뮤니티에서하는 «코딩 테스트 level 1» 스터디에 참여했었습니다.&lt;br /&gt;
+초급자를 위주로 한다는 이야기를 보고 참여했었는데 생각보다 어려웠습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;무엇이-어려웠나&quot;&gt;무엇이 어려웠나?&lt;/h3&gt;
+
+&lt;p&gt;기본적인 자료구조와 알고리즘을 학습하는 스터디였습니다.&lt;br /&gt;
+이진 탐색, 버블 정렬까지는 따라갔는데&lt;br /&gt;
+스택부터는 난이도가 어려워진다고 느꼈습니다.&lt;/p&gt;
+
+&lt;p&gt;머리로는 이해했지만 코드를 원하는 대로 만들 수 없었습니다.&lt;br /&gt;
+알고리즘 분야를 공부해야겠다고 절실히 느낀 계기가 되었습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;어떻게-알고리즘을-공부할-것인가&quot;&gt;어떻게 알고리즘을 공부할 것인가?&lt;/h3&gt;
+
+&lt;p&gt;우선 기초적인 프로그래밍 문법부터 다시 배워야 한다고 생각해서&lt;br /&gt;
+4월 1일날 시작하는 파이썬 스터디를 참여했습니다.(지금은 수료 완료한 상태입니다.)&lt;/p&gt;
+
+&lt;p&gt;이제 자바스크립트 기본 문법을 배우면서 알고리즘은 하나씩 천천히 배워볼려고 합니다.&lt;br /&gt;
+그 후 스터디를 하면서 막혔던 문제를 다시 풀어보고 싶어요!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;혹시 추천해주시고 싶은 알고리즘 공부 방식이나 강좌가 있다면 알려주시면 감사하겠습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;스터디를-하면서-기억에-남는-것&quot;&gt;스터디를 하면서 기억에 남는 것.&lt;/h3&gt;
+
+&lt;p&gt;부족한 제 포스트를 응원해주신 분들이 기억에 남았습니다.&lt;br /&gt;
+감사합니다.😊&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/164282795-b7492e23-8296-4aaf-bc86-878bfa243620.png&quot; width=&quot;450px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/164282885-eebfa74f-d19b-4b90-ae5a-fca959ef5562.png&quot; width=&quot;450px&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;html--css-기초-학습&quot;&gt;HTML &amp;amp; CSS 기초 학습&lt;/h2&gt;
+
+&lt;p&gt;3월에 HTML &amp;amp; CSS의 기초 개념을 학습했습니다.&lt;br /&gt;
+하지만 CSS의 flex 부분과 positioning은 공부를 더 해야겠습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;저는 개인적으로 개발 공부에는 끝이 없다고 생각해요.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;그래도 어느정도는 구현할 수 있게 되었습니다⭐️&lt;br /&gt;
+실력을 높이기 위해 HTML과 CSS를 이용한 미니 프로젝트를 진행중입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;3월-커밋-활동-기록&quot;&gt;3월 커밋 활동 기록&lt;/h2&gt;
+
+&lt;p&gt;3월의 커밋 활동 기록을 확인해 보았습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/164283030-14654ca5-2e76-4915-baba-162a0ae24153.png&quot; width=&quot;450px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;TIL 저장소에 가장 많이 커밋했네요!!😊&lt;/p&gt;
+
+&lt;h2 id=&quot;4월의-목표&quot;&gt;4월의 목표&lt;/h2&gt;
+
+&lt;p&gt;이미 4월 중순을 넘겼지만, 남은 기간에 이루고 싶은 목표입니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;github readme 재정비하기&lt;/li&gt;
+  &lt;li&gt;자바스크립트 기초 문법 끝내기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3월은&quot;&gt;3월은?&lt;/h2&gt;
+
+&lt;p&gt;순식간에 지나간 3월이었습니다.
+부족한 부분을 채울수 있는 기회를 얻은 달이었던것 같아요.&lt;/p&gt;
+
+&lt;p&gt;4월 회고글로 다시 돌아오겠습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;봐주셔서 감사합니다.💫&lt;/p&gt;
+</description>
+        <pubDate>Thu, 21 Apr 2022 14:55:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-12/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-12/</guid>
+        
+        <category>Memories</category>
+        
+        
+        <category>Memories</category>
+        
+      </item>
+    
+      <item>
+        <title>후기 - 김변수와 시작하는 코딩생활 with 파이썬</title>
+        <description>&lt;p&gt;네이버 카페 코뮤니티에서 진행하는&lt;br /&gt;
+«김변수와 시작하는 코딩생활 with 파이썬»에 관한
+후기입니다.&lt;br /&gt;
+&lt;a href=&quot;https://codemate.kr/@sukyungdev&quot;&gt;https://codemate.kr/@sukyungdev&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;스터디-설명&quot;&gt;스터디 설명&lt;/h2&gt;
+
+&lt;p&gt;이 스터디는 3월 22일이 1일차로 1기 스터디가 시작되었습니다.&lt;br /&gt;
+스터디에 참여하기 위해서는 책을 구매해야 진행이 가능합니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&amp;amp;mallGb=KOR&amp;amp;barcode=9788931466003&amp;amp;orderClick=LAG&amp;amp;Kc=&amp;amp;fbclid=IwAR2Uxp6_v_fyfzh2orqhdPAtCYgoLGciVv8fOyQgoa6mxyjvEAfVaffGZEw#book_info&quot;&gt;김변수와 시작하는 코딩생활 with 파이썬&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;매일 주어진 과제를 풀고 코드메이트 사이트에 과제를 올린 후&lt;br /&gt;
+네이버 카페에 url 댓글을 적는 방식으로 진행됩니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;저는 책을 직접 구매하여 스터디에 참여하였습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;스터디-참여-계기&quot;&gt;스터디 참여 계기&lt;/h2&gt;
+
+&lt;p&gt;저는 코뮤니티의 다른 스터디인 «코딩 테스트 level 1» 스터디에도 참여했었습니다.&lt;br /&gt;
+스터디를 참여하면서 파이썬 기초가 부족하다는 생각이 들어 기초를 복습하기 위해&lt;br /&gt;
+스터디를 참여하게 되었습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;스터디에-참여해서-좋았던-점&quot;&gt;스터디에 참여해서 좋았던 점&lt;/h2&gt;
+
+&lt;p&gt;일단 매일 조금씩이나마 파이썬을 공부한다는 점입니다.
+조금씩 쌓이는 기록들이 뿌듯함을 가져다 줍니다.&lt;/p&gt;
+
+&lt;p&gt;또한 책의 내용이 초보자가 이해하기 딱 좋아요!
+비유나 설명이 최대한 쉽게 기술된 책입니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;중간중간에 있는 연습문제를 풀면 더 쉽게 이해할수 있습니다. 특히 함수 파트!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;스터디-커리큘럼-문제-난이도-등에-대한-전반적인-도서-피드백&quot;&gt;스터디 커리큘럼, 문제 난이도 등에 대한 전반적인 도서 피드백&lt;/h2&gt;
+
+&lt;h3 id=&quot;스터디-커리큘럼&quot;&gt;스터디 커리큘럼&lt;/h3&gt;
+
+&lt;p&gt;스터디는 총 15일간 진행됩니다.(주말은 제외)&lt;br /&gt;
+책의 챕터는 총 15 챕터입니다. 즉 하루에 한 챕터씩 진행한다 생각하면 되겠네요!&lt;/p&gt;
+
+&lt;p&gt;단 15일 마지막날에는 chapter 15를 진행하지 않고, 과제 풀이를 진행하였습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;도서-피드백&quot;&gt;도서 피드백&lt;/h3&gt;
+
+&lt;p&gt;파이썬 개념이 쉽게 꼭 필요한 부분만 기술되었습니다.&lt;br /&gt;
+이 부분이 이책의 가장 큰 장점 같아요.&lt;/p&gt;
+
+&lt;p&gt;문제난이도는 난이도 중(&lt;strong&gt;) 프로젝트 까지는 할만하지만&lt;br /&gt;
+난이도 상(*&lt;/strong&gt;) 부터는 어려워진다고 느꼈습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;개인적으로는 난이도 중과 난이도 상 사이의 문제가 있으면 좋겠다고 느꼈습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;아쉬운-점&quot;&gt;아쉬운 점&lt;/h2&gt;
+
+&lt;p&gt;스터디에는 아쉬운 점이 없지만, 코드메이트 코드에디터 가끔씩 오류가 생겼습니다.&lt;br /&gt;
+예를 들면 실제 페이지에는 문제가 없지만 수정하기를 누르면 다음과 같이 사진이 사라지는 오류가 있었습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://codemate.kr/@sukyungdev/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%8A%A4%ED%84%B0%EB%94%94Day12%EA%B3%BC%EC%A0%9C&quot;&gt;실제 페이지&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/163719821-f6679d74-32cd-41e2-81b9-8873abdda58c.png&quot; alt=&quot;&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;또한 코드메이트 사이트의 코드에디터에 자잘한 오류가 있었습니다.&lt;br /&gt;
+(엔터가 안됨, 밑줄이 갑자기 생겨나고 지워지지 않음)&lt;/p&gt;
+
+&lt;h2 id=&quot;스터디-운영-매니저분들과-동기분들께&quot;&gt;스터디 운영 매니저분들과 동기분들께&lt;/h2&gt;
+
+&lt;p&gt;스터디에 첫번째 기수로 참여할 수 있어서 너무 즐거웠습니다.&lt;br /&gt;
+좋은 기회를 만들어 주시고 함께해 주셔서 감사합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;중간에 힘이 나는 피드백도 받을 수 있었습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/163719918-3965845d-5e9a-4ed6-ac71-f8185b354c9c.png&quot; alt=&quot;&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;봐주셔서 감사합니다.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 17 Apr 2022 14:57:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-11/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-11/</guid>
+        
+        <category>Memories</category>
+        
+        
+        <category>Memories</category>
+        
+      </item>
+    
+      <item>
+        <title>CSS 클래스 선택자 붙여쓰기, 띄어쓰기</title>
+        <description>&lt;p&gt;얼마전에 조금 헷갈렸던 부분인데 정리를 위해 쓰는 글입니다.&lt;br /&gt;
+CSS 선택자 붙여쓰기와 띄어쓰기입니다.&lt;/p&gt;
+
+&lt;p&gt;HTML 코드&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;word&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;hello&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;CSS 코드&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;/*1번*/&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;#name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;/*2번*/&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;#name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;1번 css 코드는 제대로 적용되지만, 2번 css 코드는 적용되지 않습니다.&lt;br /&gt;
+띄어쓰기 때문인데요.&lt;/p&gt;
+
+&lt;p&gt;1번 코드는 .box 클래스 &lt;strong&gt;안에 있는&lt;/strong&gt; id가 name인 자식 태그를 선택합니다.&lt;br /&gt;
+2번 코드는 &lt;strong&gt;.box 클래스이면서&lt;/strong&gt; id가 name인 태그를 선택합니다.&lt;/p&gt;
+
+&lt;p&gt;즉 띄어쓰기를 하면 자식태그 선택, 붙여쓰기를 하면 여러개의 클래스를&lt;br /&gt;
+가지고 있는 요소를 선택한다고 보면 되겠습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;참고자료-reference&quot;&gt;참고자료 (reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&amp;amp;blogId=iyakiggun&amp;amp;logNo=100193337283&quot;&gt;CSS의 선택자들을 알아보자!!&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 16 Mar 2022 14:45:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-10/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-10/</guid>
+        
+        <category>CSS</category>
+        
+        
+        <category>CSS</category>
+        
+      </item>
+    
+      <item>
+        <title>프론트엔드 개발자를 준비하며-2022년 2월 회고글</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://sukyungdev.github.io/posts/Post-07/&quot;&gt;프론트엔드 개발자를 준비하며-2022년 1월 회고글&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;지나간 2월을 회고해보는 글.&lt;/p&gt;
+
+&lt;p&gt;벌써 순식간에 3월달이 되었습니다.&lt;br /&gt;
+2월달은 어땠는지 회고해 보았습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1day-1-commit&quot;&gt;1day 1 commit&lt;/h2&gt;
+
+&lt;p&gt;일단 가장 먼저 생각나는건 일일 커밋이었습니다.&lt;br /&gt;
+커밋을 꾸준히 해서 예쁜 잔디를 만들고 싶은게 제 바램입니다.😚&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;한달만이라도 일일 커밋을 해보자!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;이것이 제 목표였는데요.&lt;br /&gt;
+그런데 목표달성을 하고도 꾸준히 일일커밋을 하고 있습니다!!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/158022482-7d8634f8-8813-4adf-86c0-92c835c31810.png&quot; alt=&quot;&quot; width=&quot;700px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;1월 14일 부터 연속으로 커밋을 하기 시작했는데 지금이 3월 12일이니&lt;br /&gt;
+약 2두달정도 매일 커밋을 했습니다.&lt;/p&gt;
+
+&lt;p&gt;이렇게 보니까 엄청 뿌듯하네요.&lt;/p&gt;
+
+&lt;p&gt;활동 기록을 확인해 보았습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/158022508-916a126d-3eba-4cd3-8bda-3757d7b8a92b.png&quot; alt=&quot;&quot; width=&quot;700px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;TIL 저장소에 커밋을 가장 많이 했네요!&lt;/p&gt;
+
+&lt;p&gt;가능하면 꾸준히 일일커밋 습관을 지속하고 싶습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;html--css-학습&quot;&gt;HTML &amp;amp; CSS 학습&lt;/h2&gt;
+
+&lt;p&gt;2월달은 HTML 기초 지식을 학습하고 CSS 학습에 들어갔습니다.&lt;br /&gt;
+확실히 CSS를 배우니 HTML이 훨씬 재밌어지는 것 같아요.&lt;/p&gt;
+
+&lt;p&gt;헷갈리는 개념이 있기는 하지만 차근차근 배워나가고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;기초개념을 공부하고 다양한 웹을 구현해보는 작업을 하고 싶어요!&lt;/p&gt;
+
+&lt;p&gt;만들어보고 싶은게 많기 때문에 기대가 됩니다⭐️&lt;/p&gt;
+
+&lt;h2 id=&quot;모각코-참여&quot;&gt;모각코 참여&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cafe.naver.com/codeuniv&quot;&gt;코뮤니티&lt;/a&gt;에서 참여할수 있는 무료 스터디 모각코에&lt;br /&gt;
+참여 신청을 하였습니다.&lt;/p&gt;
+
+&lt;p&gt;참여 커리큘럼은 코딩 테스트&amp;lt;level 1&amp;gt;커리큘럼인데요.&lt;br /&gt;
+생각보다 난이도가 있다고 느꼈습니다. (제가 자료구조가 초보라서 그런것 같기도 합니다.)&lt;br /&gt;
+다만 그만큼 배우는 것이 많은건 확실합니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;모각코가 무사히 끝나고 후기를 작성할 계획입니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;2월은&quot;&gt;2월은?&lt;/h2&gt;
+
+&lt;p&gt;2월도 빠르게 지나간것 같아요.&lt;br /&gt;
+2월 동안 개발 공부를 하면서 공부할게 너무 많다고 느꼈습니다.&lt;br /&gt;
+그만큼 차근차근 해나가야겠다고 마음 먹었습니다.&lt;/p&gt;
+
+&lt;p&gt;그리고 github을 하면서 다른 개발자분들의 프로젝트를 보는것이&lt;br /&gt;
+생각 이상으로 재밌는 일이었습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;velog에도 유익한 글들이 너무 많습니다. 뭐부터 읽어야할지 모르겠어요🥰&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;세상에는 우수한 분들이 너무 많은것 같아요.&lt;br /&gt;
+그만큼 저도 열심히 노력할려고 합니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3월의-목표&quot;&gt;3월의 목표&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;CSS 기초 개념 학습하기&lt;/li&gt;
+  &lt;li&gt;모각코 무사히 수료하기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;봐주셔서 감사합니다.⭐️&lt;/p&gt;
+</description>
+        <pubDate>Sat, 12 Mar 2022 14:50:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-09/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-09/</guid>
+        
+        <category>Memories</category>
+        
+        
+        <category>Memories</category>
+        
+      </item>
+    
+      <item>
+        <title>github 프로필 꾸미기(github-stats-transparent)</title>
+        <description>&lt;h2 id=&quot;목차&quot;&gt;목차&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;1. github 프로필 꾸미기!
+2. github-stats-transparent
+3. 적용완료
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;github-프로필-꾸미기&quot;&gt;github 프로필 꾸미기!&lt;/h2&gt;
+
+&lt;p&gt;github에는 나만의 프로필을 만들 수 있는 기능이 있습니다.&lt;br /&gt;
+바로 나의 이름 repository 만들기!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;repository를 만들때 귀여운 mona가 나타나서&lt;br /&gt;
+숨겨진 repository를 찾았다고 알려줍니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/154504915-aceafb53-16ff-4367-a2b2-1fc609568fc4.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;본인 이름 그대로 만든 repository의 README.md 파일은 자신의 프로필을 담당합니다.&lt;br /&gt;
+이 README.md 파일을 꾸며봅시다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://80000coding.oopy.io/865f4b2a-5198-49e8-a173-0f893a4fed45&quot;&gt;깃허브 프로필 꾸미기!&lt;/a&gt;
+위의 블로그를 참고하여 github 프로필을 꾸며보았습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/154505226-cac6a88d-3ae7-47a8-b090-11c68b36f326.png&quot; alt=&quot;&quot; width=&quot;700px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;뱃지를 추가하고, github-readme-stats를 추가했습니다.&lt;br /&gt;
+그런데 github-readme-stats는 살짝 아쉬운 점이
+&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/154505397-2437b43c-62a4-4f08-b168-a9b5bc44b61f.png&quot; alt=&quot;&quot; width=&quot;700px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다크모드에서 화이트 모드로 변환했을 경우, 배경색 때문에 어색하게 보입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;github-stats-transparent&quot;&gt;github-stats-transparent&lt;/h2&gt;
+
+&lt;p&gt;그러던 중 &lt;a href=&quot;https://github.com/rahul-jha98/github-stats-transparent&quot;&gt;github-stats-transparent&lt;/a&gt; repository를 발견했습니다.&lt;/p&gt;
+
+&lt;p&gt;github-stats의 배경색을 투명하게 만들어서
+다크모드, 화이트 모드 둘다 호환이 됩니다!&lt;br /&gt;
+무척이나 마음에 들었기 때문에 바로 적용하기로 하였습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;적용방법&quot;&gt;적용방법&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/rahul-jha98/github-stats-transparent&quot;&gt;github-stats-transparent&lt;/a&gt;
+저장소에 있는 설명대로 하시면 됩니다.&lt;br /&gt;
+그런데 만약 저처럼 Actions Page에 가도 Run Workflow라는 버튼이 없는 경우에는&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;저장소의 ./github/workflows 파일에 들어갑니다.&lt;/li&gt;
+  &lt;li&gt;main.yml 파일에 들어갑니다.
+&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/154505534-1835bb41-eb16-468b-b620-0c47d3bb2e04.png&quot; alt=&quot;&quot; width=&quot;500px&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;run이 적혀있는 버튼을 클릭!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이렇게 하니까 적용이 되었습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;적용완료&quot;&gt;적용완료&lt;/h2&gt;
+
+&lt;p&gt;github-stats-transparent가 적용이 되었습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/154505770-40f5575f-e5e0-4232-a483-7853f80e06be.png&quot; alt=&quot;&quot; width=&quot;600px&quot; /&gt; 
+&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/154505975-04922d69-1c37-4d57-b2b7-cadbbb2bfe74.png&quot; alt=&quot;&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이렇게 다크모드와 화이트모드 모두 호환되는 stats를 만들었습니다!&lt;/p&gt;
+</description>
+        <pubDate>Thu, 17 Feb 2022 14:52:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-08/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-08/</guid>
+        
+        <category>github</category>
+        
+        
+        <category>Git/Github</category>
+        
+      </item>
+    
+      <item>
+        <title>프론트엔드 개발자를 준비하며-2022년 1월 회고글</title>
+        <description>&lt;p&gt;&lt;strong&gt;혼자서 개발공부를해서 개발자가 되어보자!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;2021년 10월쯤 이런 생각이 들었습니다.&lt;br /&gt;
+학원도 잠깐이지만 다녀보고, 학교도 알아보았습니다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;하지만 더 이상 저는 누군가가 시켜서 하는 공부는&lt;br /&gt;
+맞지 않는다는 것을 2021년 한해동안 깨달습니다.&lt;/p&gt;
+
+&lt;p&gt;이제는 내가 스스로 알아서! 하는 공부를 해야겠다고 마음을 먹었습니다.&lt;/p&gt;
+
+&lt;p&gt;그와 동시에 내가 정말 개발을 하고 싶은건지, 내가 잘 해낼수 있는지에 대한&lt;br /&gt;
+생각도 수 없이 많이 했었던것 같아요.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;결론은 나는 개발을 공부하고 싶고, 개발자로서 살아가고 싶다고 마음을 정했습니다.&lt;/strong&gt;&lt;br /&gt;
+그렇게 2021년 12월 31일, github 계정을 만들었습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;첫-프로젝트-github-블로그를-만들어보자&quot;&gt;첫 프로젝트! github 블로그를 만들어보자!&lt;/h2&gt;
+
+&lt;p&gt;github 계정을 만들고 가장 먼저 만들어야겠다! 라고 생각한 것이 있습니다.&lt;br /&gt;
+바로 github blog입니다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;기술 블로그의 중요성을 익히 들어왔고 디자인 전공을 하면서 프로젝트에 관한&lt;br /&gt;
+기록의 중요성을 몸소 깨달았기 때문에, github blog를 가장 먼저 만들기로 결정했습니다.&lt;/p&gt;
+
+&lt;p&gt;블로그 플랫폼엔 여러가지가 있지만 굳이 gihtub를 택한 이유는 크게 다음과 같습니다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;git과 github에 익숙해지고 싶다.&lt;/li&gt;
+  &lt;li&gt;github blog의 자유로운 커스텀 기능을 이용해보고 싶다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;그렇게 github blog를 만들기 시작했습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;블로그-만들기&quot;&gt;블로그 만들기&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;22.01.01 ~ 22.01.15 약 2주정도 걸렸습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;자세한 과정 : &lt;a href=&quot;https://sukyungdev.github.io/posts/Post-01/&quot;&gt;나의 첫 github 블로그 만들기 with Jekyll&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;간단하게 회고를 하자면 생각보다 쉽지 않았습니다.&lt;br /&gt;
+오류도 오류지만 한 단계가 끝나고 다음단계로 넘어갈 때&lt;br /&gt;
+알아야 할 것들이 계속해서 생겼습니다.&lt;/p&gt;
+
+&lt;p&gt;예를 들어 이런식입니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;jekyll 설치 에러(Gem::FilePermissionError)&lt;br /&gt;
+커맨드 창에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vim ~/.zshrc&lt;/code&gt; 입력하여 .zshrc 파일을 열고 코드를 추가해야 합니다.&lt;br /&gt;
+그런데 이때 &lt;strong&gt;vim&lt;/strong&gt;을 알아야 코드를 추가할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이렇게 중간중간 구글을 통해 새로운 지식을 공부하는 경우가 많았습니다.&lt;br /&gt;
+덕분에 vim이 뭔지 알게 되었고, iTerm 과 oh-my-zsh로 터미널을 커스텀 했습니다.
+&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/153715959-97d38759-e452-479c-a6cc-eaf36446edac.png&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;몰라보게 예뻐진 나의 터미널.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;더불어서 처음엔 어색하던 github 페이지와 git command와도 친해진것 같아요!
+&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/153715603-4e8c8517-baf0-4ac8-9953-0acb4ef825df.png&quot; width=&quot;600px&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;텅 비어 있었던 제 github 프로필도 채워지고 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;알아서 모르는 것을 찾으면서 우연히 또 다른 지식을 얻는것.&lt;br /&gt;
+이런게 독학의 묘미같아요.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;그렇게 한 단계씩 밟아 나가다 보니 드디어..!
+블로그가 완성되었습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://sukyungdev.github.io/&quot;&gt;https://sukyungdev.github.io/&lt;/a&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/153715653-aa8df818-0fa0-4e2b-ac22-496df2934e0c.png&quot; width=&quot;960px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;만들고 나서 너무 뿌듯했어요.
+작지만 이렇게 무언가를 해냈다는 것이 너무 기분이 좋았습니다.&lt;br /&gt;
+(더불어 google과 수많은 개발자 분들에게 감사를..)&lt;/p&gt;
+
+&lt;h3 id=&quot;블로그-포스팅-하기&quot;&gt;블로그 포스팅 하기&lt;/h3&gt;
+
+&lt;p&gt;블로그 포스팅을 하기 위해서는 마크다운 이라는 문법을 사용해야 합니다.&lt;br /&gt;
+사실 마크다운 문법은 github 블로그를 만들면서 처음 들어봤어요.&lt;br /&gt;
+처음에는 헷갈렸지만 역시나 계속 해보니 편안해지더라고요.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;이제는 그냥 자연스럽게 됩니다. 지금도 마크다운 문법으로 쓰고 있어요.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;댓글기능은 github utterances 사용해서 구현했습니다.&lt;br /&gt;
+&lt;a href=&quot;https://sukyungdev.github.io/posts/Post-02/&quot;&gt;github 블로그에 댓글 기능 만들기 (github utterances)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;seo검색엔진최적화-하기&quot;&gt;SEO(검색엔진최적화) 하기&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://sukyungdev.github.io/posts/Post-05/&quot;&gt;자세한 설명&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;블로그를 만들기만 해서는 끝이 아니었습니다.&lt;br /&gt;
+&lt;strong&gt;S&lt;/strong&gt;earch &lt;strong&gt;E&lt;/strong&gt;ngine &lt;strong&gt;O&lt;/strong&gt;ptimization를 해야 검색사이트에&lt;br /&gt;
+제 블로그가 노출이 됩니다.&lt;br /&gt;
+SEO를 해보는 것도 무척 유용한 경험이라고 생각해요!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;naver, daum은 상당히 빠르게 되는데..google은 생각보다 등록에 시간이 오래 걸리더라고요.
+인내심은 가지고 기다렸습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;그렇게 제 첫 blog가 무사히 완성되었습니다!!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;어떤-분야로-나아갈-것인가&quot;&gt;어떤 분야로 나아갈 것인가?&lt;/h2&gt;
+
+&lt;p&gt;개발에는 여러 분야가 있고, 그중 어떤 분야를 할지 많은 분들이 고민하실 거에요.&lt;br /&gt;
+저도 그랬습니다.&lt;/p&gt;
+
+&lt;p&gt;저는 프론트엔드 개발자가 저와 맞는다고 생각했습니다.&lt;br /&gt;
+개발을 처음 접해본 계기가 html, css이고, 전공했던 디자인과도 관련이 있으며&lt;br /&gt;
+제가 즐겁게 할수 있고 하고싶은 분야이기 때문이에요.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;거기다가 JavaScript와 관련 프레임워크로 만드는 프로젝트들이 너무 매력적이게 느껴졌어요.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;그렇게 프론트엔드로 분야를 정하게 되었습니다.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;html-공부-시작&quot;&gt;html 공부 시작.&lt;/h3&gt;
+
+&lt;p&gt;html은 예전에 꽤나 공부를 했었지만,&lt;br /&gt;
+기초부터 좀더 탄탄히 실력을 쌓아야겠다고 생각했습니다.&lt;br /&gt;
+보다 semantic한 태그를 만들기 위해서지요!&lt;/p&gt;
+
+&lt;p&gt;그래서 강의를 듣고 있고, 현재 html 기초를 뗀 상태입니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;어떤 강의를 들었는지, 강의가 어땠는지는 추후에 포스팅하도록 할께요!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;다시보니 제가 예전에 짠 html 코드는 semantic 하지 못하더라고요.&lt;br /&gt;
+기초를 다지는 게 얼마나 중요한지 다시 깨달았습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1월은&quot;&gt;1월은?&lt;/h2&gt;
+
+&lt;p&gt;이렇게 회고글을 쓰니 1월달 일어난 일들이 마구 생각나네요.&lt;br /&gt;
+개발을 공부하면서 느낀 생각, 감정들을 담을 수 있다는게 가장 큰 장점인것 같아요.&lt;/p&gt;
+
+&lt;p&gt;1월은 새해가 시작되는 달입니다.&lt;br /&gt;
+새해가 시작되는 달에 개발을 시작하는 첫발을 내딛는게 의미있고 기분이 좋아요.&lt;/p&gt;
+
+&lt;p&gt;2022년 개발자로서 성장하길 기대합니다.&lt;/p&gt;
+
+&lt;p&gt;봐주셔서 감사합니다.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 12 Feb 2022 14:56:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-07/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-07/</guid>
+        
+        <category>Memories</category>
+        
+        
+        <category>Memories</category>
+        
+      </item>
+    
+      <item>
+        <title>github blog 검색엔진에 등록하기_2</title>
+        <description>&lt;h2 id=&quot;목차&quot;&gt;목차&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;1. Naver 서치 어드바이저
+2. Daum 검색등록
+3. 참고자료 (Reference)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;naver-서치-어드바이저&quot;&gt;Naver 서치 어드바이저&lt;/h2&gt;
+
+&lt;p&gt;국내 최대 포털 사이트인 naver에 블로그를 등록해봅시다!
+google과 비슷하나 좀 더 쉽습니다.
+&lt;a href=&quot;https://searchadvisor.naver.com/&quot;&gt;naver search advisor&lt;/a&gt;&lt;br /&gt;
+naver 서치 어드바이저 에서 등록할 수 있습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;sitmap.xml 과 feed.xml이 필요합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;사이트 등록
+웹 마스터 도구 - 사이트 관리 - 사이트 등록&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/153006425-1b2745db-d13d-4b8e-b2a0-8eb9011f582d.png&quot; alt=&quot;&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;sitemap.xml 등록
+사이트 등록 후 사이트 링크 클릭 - 사이트 관리 - 요청 - 사이트맵 제출 - sitemap.xml 등록&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;rss 등록
+사이트 등록 후 사이트 링크 클릭 - 사이트 관리 - 요청 - RSS 제출 - feed.xml 등록
+&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/153007222-11d0ddae-ceab-4b5c-86b3-55a0148745c3.png&quot; alt=&quot;&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://yenarue.github.io/tip/2020/04/30/Search-SEO/&quot;&gt;Github 블로그 검색엔진에 등록하기 (구글/네이버/다음)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://gmlwjd9405.github.io/2017/10/21/include-blog-in-a-NaverSearchEngine.html&quot;&gt;[Jekyll] 검색엔진에 블로그 등록하기 _Naver편&lt;/a&gt;&lt;br /&gt;
+위의 두분 블로그를 참고하면서 하면 쉽게 등록할 수 있는데 그전에 한번 확인해야 할 점이 있습니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사이트 관리 - 리포트 - 사이트 최적화 or 사이트 관리 - 간단체크&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/153007347-505b896d-430d-4b59-b7ae-05cb5231edd6.png&quot; alt=&quot;&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;사이트 설명 부분입니다. github chirpy 블로그 기준 _config.yml 파일에 있는&lt;br /&gt;
+ description 파트의 내용입니다.&lt;/p&gt;
+
+&lt;p&gt;naver 서치 어드바이저의 경우 &lt;strong&gt;띄어쓰기 포함&lt;/strong&gt; 80자 미만의 내용만&lt;br /&gt;
+올바른 내용으로 인식합니다.&lt;br /&gt;
+저 같은 경우 description 태그에 80자 이상의 내용을 적었기 때문에&lt;br /&gt;
+2번 수정을 하였습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;description 태그는 seo에 영향을 미치는 태그이기 때문에 단순 나열보다는&lt;br /&gt;
+간결하면서 함축적인 내용을 하는 것이 좋습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;html문서의 head 태그 안에 meta 태그로 description이 존재하는 경우도 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/search/docs/beginner/seo-starter-guide?hl=ko&quot;&gt;google SEO 기본 가이드&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/153008379-487b2406-bc2a-413e-b6a3-6a719eaf5fa3.png&quot; alt=&quot;&quot; width=&quot;500px&quot; /&gt;
+2022.02.08년 기준 naver 검색엔진에 등록이 된 것을 확인하였습니다.
+등록일 : 2022.01.21&lt;/p&gt;
+
+&lt;h2 id=&quot;2-daum-검색등록&quot;&gt;2. Daum 검색등록&lt;/h2&gt;
+
+&lt;p&gt;등록하는 방법이 가장 간단합니다!&lt;br /&gt;
+&lt;a href=&quot;https://register.search.daum.net/index.daum&quot;&gt;DAUM 검색등록&lt;/a&gt;&lt;br /&gt;
+위 사이트로 가셔서 블로그 url을 등록하시면 됩니다.
+&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/153008494-022758f6-82ba-4695-952b-a06e384df9d5.png&quot; alt=&quot;&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;추가(2022.02.15)
+daum 검색엔진에 등록이 된 것을 확인했습니다.
+&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/154076470-0d952968-a349-4fb9-989c-0af84792902a.png&quot; alt=&quot;&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;daum이-가장-간편하고-빠르네요&quot;&gt;daum이 가장 간편하고 빠르네요.&lt;/h2&gt;
+
+&lt;p&gt;이렇게 google, naver, daum의 검색엔진 등록이 끝났습니다.&lt;br /&gt;
+개인적으로 google이 가장 난이도가 높았고, naver와 daum은 상대적으로&lt;br /&gt;
+쉬운 편이네요. 이제 등록이 될때까지 여유롭게 기다리면 됩니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-참고자료-reference&quot;&gt;3. 참고자료 (Reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://yenarue.github.io/tip/2020/04/30/Search-SEO/&quot;&gt;Github 블로그 검색엔진에 등록하기 (구글/네이버/다음)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://gmlwjd9405.github.io/2017/10/21/include-blog-in-a-NaverSearchEngine.html&quot;&gt;[Jekyll] 검색엔진에 블로그 등록하기 _Naver편&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://developers.google.com/search/docs/beginner/seo-starter-guide?hl=ko&quot;&gt;google SEO 기본 가이드&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 08 Feb 2022 14:42:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-06/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-06/</guid>
+        
+        <category>gitblog</category>
+        
+        
+        <category>Issue</category>
+        
+        <category>Git/Github</category>
+        
+      </item>
+    
+      <item>
+        <title>github blog 검색엔진에 등록하기_1</title>
+        <description>&lt;h2 id=&quot;목차&quot;&gt;목차&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;1. 검색엔진
+2. 준비사항
+3. 첫번째 검색엔진, google
+4. 참고자료 (Reference)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;1-검색엔진&quot;&gt;1. 검색엔진&lt;/h2&gt;
+
+&lt;p&gt;블로그를 이제 검색엔진에 등록해보자!&lt;br /&gt;
+단순히 블로그를 만들었다고 해서 다른 사람이 내 블로그를 검색해 들어올 수 없고,&lt;br /&gt;
+몇 명이 방문했는지, 어떤 포스트에 방문했는지 알 수 없다.&lt;br /&gt;
+때문에 다른 사람들이 검색에서 들어올 수 있드록 내가 검색엔진에 블로그를 등록해야 한다.&lt;br /&gt;
+크게 google, naver, daum 등이 있겠다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-준비사항&quot;&gt;2. 준비사항&lt;/h2&gt;
+
+&lt;p&gt;우선 github blog reopository에 sitemap.xml 과 robots.txt, feed.xml&lt;br /&gt;
+파일이 준비되어 있어야 한다.&lt;br /&gt;
+&lt;a href=&quot;https://gmlwjd9405.github.io/2017/10/21/include-blog-in-a-NaverSearchEngine.html&quot;&gt;[Jekyll] 검색엔진에 블로그 등록하기 _Naver편&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;웹 URL 창에 &amp;lt;나의 블로그주소/sitemap.xml&amp;gt;,&lt;br /&gt;
+&amp;lt;나의 블로그주소/feed.xml&amp;gt;, &amp;lt;나의 블로그주소/robots.txt&amp;gt;가 정상 작동하는지 확인하자.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;3-첫번째-검색엔진-google&quot;&gt;3. 첫번째 검색엔진, google&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://yenarue.github.io/tip/2020/04/30/Search-SEO/&quot;&gt;Github 블로그 검색엔진에 등록하기 (구글/네이버/다음)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://www.irgroup.org/posts/jekyll-google-search/&quot;&gt;Jekyll 테마에서 구글 검색 노출 등록하기&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;위 두 블로그를 보면서 구글 검색엔진을 등록했다.
+등록하기 어렵지는 않았으나 문제가 있었다.&lt;/p&gt;
+
+&lt;h3 id=&quot;31-제출된-사이트맵-가져올-수-없음&quot;&gt;3.1 제출된 사이트맵 가져올 수 없음.&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/151016109-67ee2b79-3e5c-40e0-b2ac-44e440a800a6.png&quot; alt=&quot;image&quot; /&gt;
+이런 오류가 생성이 되었다. 그러나 이게 오류라고 하기도 애매한게&lt;br /&gt;
+검색을 해보니 사이트맵 처리에 며칠이상 걸린다는 경우가 많았다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/151016285-a948ddcb-985b-4cf6-a6eb-24c6d470d622.png&quot; alt=&quot;image&quot; /&gt;
+또한 나의 경우 사이트맵을 클릭하면 열 수 있는 &lt;strong&gt;사이트맵 열기&lt;/strong&gt; 에서&lt;br /&gt;
+사이트맵이 정상적으로 작동하는 것을 확인했다.&lt;/p&gt;
+
+&lt;p&gt;그래서 일단 기다려 보기로 했다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;그러나 며칠 뒤에도 &lt;strong&gt;가져올 수 없음&lt;/strong&gt; 이라는 상황이 지속되어 다시&lt;br /&gt;
+검색을 시작했다.&lt;/p&gt;
+
+&lt;h3 id=&quot;32-google-search-console-url-검사&quot;&gt;3.2 google search console URL 검사&lt;/h3&gt;
+
+&lt;p&gt;나와 비슷한 문제를 겪고, 해결하신 분의 블로그를 발견했다.&lt;br /&gt;
+&lt;a href=&quot;https://investhcmworker.tistory.com/entry/%ED%8B%B0%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EA%B8%80-%EC%84%9C%EC%B9%98-%EC%BD%98%EC%86%94-%EB%93%B1%EB%A1%9D-%EB%B0%A9%EB%B2%95-%EB%B0%8F-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95Feat%EA%B0%80%EC%A0%B8%EC%98%AC-%EC%88%98-%EC%97%86%EC%9D%8C&quot;&gt;구글 서치 콘솔 등록 방법 및 문제 해결&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;sitemap을 입력할때 sitemap 이 아닌 /sitemap을 입력해 해결한 분을 봤는데&lt;br /&gt;
+똑같은 방법으로 시도했지만 해결되지 않았다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;그리하여 나도 URL 검사를 해여 &lt;strong&gt;색인 생성 요청&lt;/strong&gt; 을 진행하였다.s
+그리고 나서 2일 정도 지나니까 성공했다.
+&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/151018660-90c8a96d-56d4-4141-a501-2112d954ae14.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;sitemap을 성공적으로 가져와도 바로 검색되지 않는다. 최소 3일 ~ 7일은 걸리는 듯하다.&lt;br /&gt;
+여유롭게 기다리는 것이 방법 같다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;포스트 개수가 많지 않다면 포스트 URL을 각각 색인 요청 하는 것도&lt;br /&gt;
+좋은 방법 같다. URL 색인 요청이 더 빠를 수 있을것 같다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;필자의 경우 지금 sitemap 등록한지 약 3일이 되어가는데,&lt;br /&gt;
+아직 포스트가 검색엔진에 등록되지 않았다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/151018808-e3998ece-bd91-460e-a039-fb298d96f7f9.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;naver와 daum의 경우는 상당히 빨리 진행되었는데 google은 시간이 많이 걸리는 것 같다.&lt;br /&gt;
+여유롭게 기다려야겠다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;추가-20220126&quot;&gt;추가 (2022.01.26)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/151136718-77a193eb-0aaa-4c3b-a5bb-43bf8b29f835.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;sitemap 데이터가 생성되서 확인했는데 포스트 URL이 제외되었다.&lt;br /&gt;
+별다른 문제가 없어보이는데..결국 포스트 URL을 각각 색인 요청하였다.&lt;br /&gt;
+좀 더 기다려 봐야겠다.&lt;/p&gt;
+
+&lt;h3 id=&quot;추가-20220208&quot;&gt;추가 (2022.02.08)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/153011432-24bfa83d-1db8-4af7-b387-d4fc9e44ec47.png&quot; alt=&quot;&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;현재 https://sukyungdev.github.io/의 url은 등록되었으나&lt;br /&gt;
+각각의 포스트 url은 등록되지 않은 상태입니다.&lt;br /&gt;
+찾아보니 드물지만 색인 등록에 몇주 이상 걸리는 경우도 있는 것 같습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;4-참고자료-reference&quot;&gt;4. 참고자료 (Reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://gmlwjd9405.github.io/2017/10/21/include-blog-in-a-NaverSearchEngine.html&quot;&gt;[Jekyll] 검색엔진에 블로그 등록하기 _Naver편&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://yenarue.github.io/tip/2020/04/30/Search-SEO/&quot;&gt;Github 블로그 검색엔진에 등록하기 (구글/네이버/다음)&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://www.irgroup.org/posts/jekyll-google-search/&quot;&gt;Jekyll 테마에서 구글 검색 노출 등록하기&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://investhcmworker.tistory.com/entry/%ED%8B%B0%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B5%AC%EA%B8%80-%EC%84%9C%EC%B9%98-%EC%BD%98%EC%86%94-%EB%93%B1%EB%A1%9D-%EB%B0%A9%EB%B2%95-%EB%B0%8F-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95Feat%EA%B0%80%EC%A0%B8%EC%98%AC-%EC%88%98-%EC%97%86%EC%9D%8C&quot;&gt;구글 서치 콘솔 등록 방법 및 문제 해결&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 26 Jan 2022 14:08:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-05/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-05/</guid>
+        
+        <category>gitblog</category>
+        
+        
+        <category>Issue</category>
+        
+        <category>Git/Github</category>
+        
+      </item>
+    
+      <item>
+        <title>github push 취소 및 git contributions 나타나지 않는 현상</title>
+        <description>&lt;h2 id=&quot;목차&quot;&gt;목차&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;1. 문제상황
+2. push한 이력 취소
+3. commit 이력이 나타나지 않는 현상
+4. git user.name과 user.email 변경하기
+5. 참고자료 (Reference)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;1-문제상황&quot;&gt;1. 문제상황&lt;/h2&gt;
+
+&lt;p&gt;갑자기 commit 이력이 나타나지 않는 현상이 생겼다.&lt;br /&gt;
+상당히 당황했는데, github push한 이력을 취소하고 다시 push해보기로 했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-push한-이력-취소&quot;&gt;2. push한 이력 취소&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-commit-이력-확인&quot;&gt;2.1 commit 이력 확인&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;git log --oneline
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;22-원하는-시간의-commit-해쉬코드-선택하고-나머지는-삭제&quot;&gt;2.2 원하는 시간의 commit 해쉬코드 선택하고 나머지는 삭제&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;git reset --hard &amp;lt;해쉬코드 입력&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;이때 방법이 두가지가 있는데 reset과 revert가 있다.&lt;br /&gt;
+reset은 아예 원하는 commit으로 깔끔하게 되돌아가는 것이고&lt;br /&gt;
+revert는 이력이 남은 채로 무엇을 revert 했는지 기록이 남게 된다.&lt;br /&gt;
+협업에서는 revert를 쓰는 것이 좋다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youngest-programming.tistory.com/220&quot;&gt;[Git] Reset, Revert 차이 간략정리&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;23-선택한-commit으로-push하기&quot;&gt;2.3 선택한 commit으로 push하기&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;git push -f origin &amp;lt;branch name&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;3-commit-이력이-나타나지-않는-현상&quot;&gt;3. commit 이력이 나타나지 않는 현상&lt;/h2&gt;
+
+&lt;p&gt;이렇게 하고 다시 push를 했는데도 commit 이력(contributions)가 나타나지 않았다.&lt;br /&gt;
+고민하다가 혹시나 싶어서&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;git config --list
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이 커맨드로 환경설정을 확인해 보았다.&lt;br /&gt;
+그런데 user.name과 user.email이 다르게 설정되어 있었다..&lt;/p&gt;
+
+&lt;p&gt;난 설정을 바꾼적이 없는데 왜그럴까 생각해 보니 소스트리 설정이 다르게&lt;br /&gt;
+되어있는 것을 확인했다. 소스트리 설정이 config 설정에 영향을 준 것 같다.&lt;/p&gt;
+
+&lt;h2 id=&quot;4-git-username과-useremail-변경하기&quot;&gt;4. git user.name과 user.email 변경하기&lt;/h2&gt;
+
+&lt;h3 id=&quot;41-터미널-이용하는-방법&quot;&gt;4.1 터미널 이용하는 방법&lt;/h3&gt;
+
+&lt;p&gt;user.name 변경&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;git config --global user.name &amp;lt;name&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;user.email 변경&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;git config --global user.email &amp;lt;&quot;email&quot;&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;42-source-tree-설정&quot;&gt;4.2 Source Tree 설정&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/150364712-3f36c56c-bd4e-46d3-8ff1-af1c785b37c7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Source Tree의 Preferences - General 탭에 가면 user.name과 user.email을&lt;br /&gt;
+설정할 수 있다. 꼭 자신의 이름과 이메일로 설정하거나 위에 체크 박스를 해제하자.&lt;/p&gt;
+
+&lt;h2 id=&quot;5-참고자료-reference&quot;&gt;5. 참고자료 (Reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youngest-programming.tistory.com/220&quot;&gt;[Git] Reset, Revert 차이 간략정리&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://ninano1109.tistory.com/3&quot;&gt;Git push 취소 방법&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://hoony-gunputer.tistory.com/entry/4-git-useremail-username-%EB%93%B1%EB%A1%9D&quot;&gt;git user.email, user.name 등록&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 20 Jan 2022 15:16:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-04/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-04/</guid>
+        
+        <category>git</category>
+        
+        
+        <category>Issue</category>
+        
+        <category>Git/Github</category>
+        
+      </item>
+    
+      <item>
+        <title>github 블로그 수정이 되지 않는 현상(About 웹캐시)</title>
+        <description>&lt;h2 id=&quot;목차&quot;&gt;목차&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;1. 문제상황
+2. 웹 캐시
+3. 해결방법
+4. 참고자료 (Reference)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;1-문제상황&quot;&gt;1. 문제상황&lt;/h2&gt;
+
+&lt;p&gt;github 블로그에 글을 수정, 삭제를 했는데,&lt;br /&gt;
+변경사항이 제대로 나타나지 않는 현상이 생겼다.&lt;br /&gt;
+처음엔 오타나, 커밋의 문제라고 생각했지만, 아니었다.&lt;/p&gt;
+
+&lt;p&gt;문제를 해결하기 위해 구글 검색을 시작하였다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-웹-캐시&quot;&gt;2. 웹 캐시&lt;/h2&gt;
+
+&lt;p&gt;무척이나 쉽고 간단하다.&lt;/p&gt;
+
+&lt;p&gt;문제원인을 간단히 말하자면 웹 캐시(web cache) 때문이었다.&lt;br /&gt;
+&lt;a href=&quot;https://hahahoho5915.tistory.com/33&quot;&gt;웹 캐시(WEB Cache)란 무엇인가?&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://godtaehee.tistory.com/1&quot;&gt;깃헙 블로그 삭제되지 않는 현상&lt;/a&gt;&lt;br /&gt;
+위 두 글에 자세히 설명이 되어 있는데 간단하게 웹캐시를 설명하자면&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;웹 캐시(WeB Cache)&lt;br /&gt;
+사용자가 웹서버에 접속할때 필요한 정보(HTML, CSS, Image)를&lt;br /&gt;
+웹서버가 아닌 특정 장소에 저장하여 웹서버로부터 요청횟수를 줄이는 서비스이다.&lt;br /&gt;
+응답시간이 감소하고 네트워크 트레픽이 줄어든다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;웹캐시 때문에 그 전에 저장된 정보가 삭제되지 않고 그대로 남아있는 것이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-해결방법&quot;&gt;3. 해결방법&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;참고로 웹 브라우저는 google chrome, 맥북 기준이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;chrome 맞춤설정 및 제어 - 도구 더보기 - 개발자 도구 - Disable cache 체크&lt;br /&gt;
+(단축키 command + option + i)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/149879010-5eaf9440-71ce-4380-9c04-0990d1a6525e.png&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;command + shift + R (캐시를 삭제하고 새로고침)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이렇게 해주니 변경사항이 바로 적용이 되는 것을 확인하였다.&lt;br /&gt;
+만약 문제상황이 다시 발생한다면 command + shift + R 을 해주면&lt;br /&gt;
+무사히 해결이 된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;4-참고자료-reference&quot;&gt;4. 참고자료 (Reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hahahoho5915.tistory.com/33&quot;&gt;웹 캐시(WEB Cache)란 무엇인가?&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://godtaehee.tistory.com/1&quot;&gt;깃헙 블로그 삭제되지 않는 현상&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 18 Jan 2022 05:59:00 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-03/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-03/</guid>
+        
+        <category>git</category>
+        
+        
+        <category>Issue</category>
+        
+        <category>Git/Github</category>
+        
+      </item>
+    
+      <item>
+        <title>github 블로그에 댓글 기능 만들기 (github utterances)</title>
+        <description>&lt;h1 id=&quot;블로그-주소&quot;&gt;블로그 주소&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://sukyungdev.github.io/&quot;&gt;https://sukyungdev.github.io/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;목차&quot;&gt;목차&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;1. utterances에 관해
+2. utterances 사용방법
+3. 적용완료
+4. 시행착오
+5. 참고자료 (Reference)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;1-utterances에-관해&quot;&gt;1. utterances에 관해&lt;/h2&gt;
+
+&lt;p&gt;utterances란?
+utterances는 간단하게 말하자면&lt;br /&gt;
+github으로 로그인해서 이용할 수 있는 댓글기능이다.&lt;br /&gt;
+무료이고 빠르고 관리가 용이하다.&lt;br /&gt;
+또한 적용하기도 상당히 쉬운 장점이 많은 기능이다.&lt;br /&gt;
+&lt;a href=&quot;https://baek.dev/post/4/&quot;&gt;참고자료-01&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://sukvvon.tistory.com/72&quot;&gt;참고자료-02&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;유명한 댓글기능 중에 Disqus도 있다.&lt;br /&gt;
+Disqus도 괜찮다고 생각하지만 utterances 보다&lt;br /&gt;
+적용과 관리가 어렵다. 거기다가 UI도 utterances가&lt;br /&gt;
+더 가독성이 좋아서 utterances를 추천한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;2-utterances-사용방법&quot;&gt;2. utterances 사용방법&lt;/h2&gt;
+
+&lt;p&gt;무척이나 쉽고 간단하다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;utterances은 github repository의 issues 탭이 필요하기&lt;br /&gt;
+ 때문에 먼저 repository를 생성한다.&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;blog repository를 그대로 사용해도 괜찮은것 같다.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/apps/utterances&quot;&gt;utterances app 설치&lt;/a&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;github 계정이 필요하다&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://utteranc.es/&quot;&gt;utteranc.es&lt;/a&gt; 이곳에 접속한다.&lt;br /&gt;
+아래로 내려가면 repo라는 칸이 있는데 이곳에 github user name과 저장소 명을 입력한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/149664222-9c162c22-47c1-43d6-a2de-316bed52b17c.png&quot; width=&quot;640px&quot; hight=&quot;320px&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;그다음 아래쪽에 있는 script 코드에 알맞은 유저이름과 저장소가 나타나는지&lt;br /&gt;
+확인한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/149664382-d90cf9bc-5419-4968-928d-2fab15dce99d.png&quot; width=&quot;640px&quot; hight=&quot;320px&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;copy 버튼을 눌러서 script 코드를 복사하고 &lt;strong&gt;포스팅을 담당하는 HTML 파일의 아래에&lt;/strong&gt;&lt;br /&gt;
+붙여넣기 한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3-적용완료&quot;&gt;3. 적용완료&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/149664648-d00b81a6-2d4b-42ef-b898-92e9c7de41aa.png&quot; width=&quot;640px&quot; hight=&quot;320px&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;댓글기능이 잘 동작하고 있다!! 만약 댓글을 관리하고 싶으면&lt;br /&gt;
+저장소의 issues 탭에 가면 댓글 관리를 편리하게 할 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;4-시행착오&quot;&gt;4. 시행착오&lt;/h2&gt;
+
+&lt;h3 id=&quot;41-not-following-issue-template&quot;&gt;4.1 Not following issue template&lt;/h3&gt;
+
+&lt;p&gt;이게 어떤 이유로 나타나는 현상인지 정확히 알 수 없었다.&lt;br /&gt;
+댓글을 달 경우 ‘Not following issue template’ 이란 문구가 뜨면서&lt;br /&gt;
+댓글 기능에 정상적으로 되지 않는 현상인데&lt;br /&gt;
+필자는 저장소를 삭제하고 다시 만들어서 해결할 수 있었다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;412-fork-repository&quot;&gt;4.1.2 fork repository&lt;/h4&gt;
+
+&lt;p&gt;fork repository는 적용이 되지 않는 현상이 있는데&lt;br /&gt;
+&lt;a href=&quot;https://utteranc.es/&quot;&gt;utteranc.es&lt;/a&gt; 에 들어가서 글을 자세히 읽어보면&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;If your repo is a fork, navigate to its settings tab and&lt;br /&gt;
+ confirm the issues feature is turned on.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;즉 fork한 저장소의 경우에는 세팅탭에 들어가서 issues 에 관한 설정을 체크해야 한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Setting - Features - Issues 체크하기!&lt;br /&gt;
+그러면 fork repository의 Issues 탭에 나타나고 정상적으로 적용이 된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;5-참고자료-reference&quot;&gt;5. 참고자료 (Reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://baek.dev/post/4/&quot;&gt;utterances에 관해-01&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://sukvvon.tistory.com/72&quot;&gt;utterances에 관해-02&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 16 Jan 2022 14:55:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-02/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-02/</guid>
+        
+        <category>git</category>
+        
+        
+        <category>Project</category>
+        
+        <category>Git/Github</category>
+        
+      </item>
+    
+      <item>
+        <title>나의 첫 github 블로그 만들기 with Jekyll</title>
+        <description>&lt;h1 id=&quot;블로그-주소&quot;&gt;블로그 주소&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://sukyungdev.github.io/&quot;&gt;https://sukyungdev.github.io/&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용테마 : &lt;a href=&quot;https://jamstackthemes.dev/theme/jekyll-theme-chirpy/&quot;&gt;Chirpy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;목차&quot;&gt;목차&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;1. 만들게 된 계기
+2. github 플랫폼을 택한 이유
+3. with jekyll
+4. 과정과 시행착오
+5. 첫 화면
+6. 추가 내용
+7. 느낀점
+8. 참고자료 (Reference)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;1-만들게-된-계기&quot;&gt;1. 만들게 된 계기?&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;본격적인 개발 공부를 시작하는데 있어서&lt;br /&gt;
+나의 개발 성장 일지를 정리할 수 있는 블로그를&lt;br /&gt;
+만들고 싶었다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;2-github-플랫폼을-택한-이유&quot;&gt;2. github 플랫폼을 택한 이유&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;이미 많은 개발자 분들이 github 블로그를 사용하고 있다.&lt;/li&gt;
+  &lt;li&gt;개발자가 가장 운영하기 적합한 블로그라고 생각하기 때문이다.&lt;/li&gt;
+  &lt;li&gt;이번 github 블로그 제작을 통해 git, github과 친해지고 싶었다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3-with-jekyll&quot;&gt;3. with Jekyll&lt;/h2&gt;
+
+&lt;p&gt;github 블로그는 일반적으로 정적사이트 생성기(Static Site Generator)로&lt;br /&gt;
+만들어지는 것 같다.&lt;/p&gt;
+
+&lt;p&gt;Static Site Generator가 무엇을 하는지는
+&lt;a href=&quot;https://iamsang.com/blog/2020/10/10/custom-static-site-generator/&quot;&gt;여기&lt;/a&gt;에 간결하게
+설명되어 있다.&lt;br /&gt;
+다양한 정적사이트 생성기가 있는데 나는 가장 많이 사용되어지고&lt;br /&gt;
+있는 Jekyll을 선택하였다.(다른 정적 사이트 생성기에 비해 많은 래퍼런스가 있기 때문에)&lt;/p&gt;
+
+&lt;h2 id=&quot;4-과정과-시행착오&quot;&gt;4. 과정과 시행착오&lt;/h2&gt;
+
+&lt;h3 id=&quot;41-과정&quot;&gt;4.1 과정&lt;/h3&gt;
+
+&lt;p&gt;간단하게 과정을 설명한다면(MacBook 기준)&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Homebrew를 맥북 터미널에서 다운받고, ruby 설치
+    &lt;blockquote&gt;
+      &lt;p&gt;맥북에는 기본적으로 ruby가 깔려 있으나 지킬을 지원하지 않는 경우가 있고,&lt;br /&gt;
+맥북 자체의 ruby 보다는 따로 설치한 ruby를 사용하는 편이 좋다는 글을 여러 보았다.
+ruby의 버전 관리를 위해서 rbenv, rvm 같은 툴을 설치해야한다.&lt;br /&gt;
+rvm 보다는 상대적으로 가벼운 rbenv를 사용하는 분이 많았다.&lt;br /&gt;
+&lt;a href=&quot;https://kbs4674.tistory.com/187&quot;&gt;rbenv 개념 및 사용이유&lt;/a&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Jekyll 설치
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;gem install jekyll bundler
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Jekyll 테마 고르기&lt;br /&gt;
+&lt;a href=&quot;https://jamstackthemes.dev/&quot;&gt;https://jamstackthemes.dev/&lt;/a&gt; 같은 Jekyll 테마 사이트에서&lt;br /&gt;
+마음에 드는 테마를 고른다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Jekyll 실행 및 테마 적용&lt;/p&gt;
+
+    &lt;p&gt;이건 크게 2가지 방법이 있는데&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;고른 테마의 github 저장소에서 .zip 파일로 다운받아 적용하는 경우&lt;br /&gt;
+&lt;a href=&quot;https://zeddios.tistory.com/1223&quot;&gt;Zedd0202님 블로그 참고&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;고른 테마의 github 저장소를 fork해서 나의 repository에 적용하는 경우&lt;br /&gt;
+&lt;a href=&quot;https://calgaryhomeless.tistory.com/1&quot;&gt;캘거리 홈리스님 블로그 참고&lt;/a&gt;
+&lt;a href=&quot;https://www.irgroup.org/posts/jekyll-chirpy/&quot;&gt;하얀눈길님 블로그 참고&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;개인적인 경험으로는 후자를 더 추천한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;41-시행착오&quot;&gt;4.1 시행착오&lt;/h3&gt;
+
+&lt;h4 id=&quot;411-설치-관련-에러&quot;&gt;4.1.1 설치 관련 에러&lt;/h4&gt;
+
+&lt;p&gt;일단 필자의 경우, rbenv를 이용해서 ruby설치까지는 진행했지만&lt;br /&gt;
+Jekyll 설치하는 데 있어서 몇가지 문제를 만났다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gem::FilePermissionError&lt;/code&gt;&lt;br /&gt;
+rbenv PATH를 추가하지 않아서 생긴 에러이다.&lt;br /&gt;
+&lt;a href=&quot;https://jojoldu.tistory.com/288&quot;&gt;https://jojoldu.tistory.com/288&lt;/a&gt;
+이 블로그를 참고하여 해결할수 있었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nil:NilClass&lt;/code&gt;&lt;br /&gt;
+이런 에러를 Jekyll 설치중에 발견했는데&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo gem install rdoc&lt;/code&gt;&lt;br /&gt;
+터미널에 이러한 명령어를 입력해 해결 할 수 있었다.&lt;br /&gt;
+&lt;a href=&quot;https://github.com/ruby/rdoc/issues/786&quot;&gt;참고자료&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;412-테마-관련-에러&quot;&gt;4.1.2 테마 관련 에러&lt;/h4&gt;
+
+&lt;p&gt;아까 테마를 적용하는 두가지 방법 중에서 후자를 추천한다는 이야기를 했었는데&lt;br /&gt;
+필자의 경우 전자의 방법(.zip 폴더로 다운받아서 적용하는 방법)으로 적용할 경우&lt;br /&gt;
+로컬에서는 테마 적용이 되나 github.io 에서는 적용이 되지 않았다.&lt;br /&gt;
+이 문제 때문에 한참을 헤맸었다.&lt;/p&gt;
+
+&lt;p&gt;그러던 중 캘거리 홈리스님과 하얀눈꽃님의 블로그를 보고&lt;br /&gt;
+테마의 깃헙 저장소를 fork하는 방법이 있다는 것을 알게 되었고,&lt;br /&gt;
+무사히 테마를 적용할 수 있었다.&lt;/p&gt;
+
+&lt;p&gt;첫번째 방법으로는 적용되지 않던 테마가 두번째 방법으로 하니&lt;br /&gt;
+무사히 적용이 되었다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://calgaryhomeless.tistory.com/1&quot;&gt;캘거리 홈리스님 블로그&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://www.irgroup.org/posts/jekyll-chirpy/&quot;&gt;하얀눈길님 블로그&lt;/a&gt;&lt;br /&gt;
+두분 블로그가 정말 큰 도움이 되었다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;참고로 테마에 따라 fork하는 방법으로만 적용되는 경우도 있었다.&lt;br /&gt;
+이거는 직접 해보면서 확인하는 방법이 제일 정확한 것 같다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;413-그외-다른-에러&quot;&gt;4.1.3 그외 다른 에러&lt;/h4&gt;
+
+&lt;p&gt;댓글 기능(utterances) 관련 에러&lt;br /&gt;
+&lt;a href=&quot;https://sukyungdev.github.io/posts/Post-02/&quot;&gt;github 블로그에 댓글 기능 만들기 (github utterances)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5-첫-화면&quot;&gt;5. 첫 화면&lt;/h2&gt;
+
+&lt;p&gt;감동의 첫 화면&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/96860670/148946568-6556511c-e461-4b31-8c95-fdda0b329418.png&quot; width=&quot;960px&quot; hight=&quot;480px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2022년 1월 1일 부터 만들기 시작해서 1월 14일날 이 화면을 볼 수 있었다.&lt;/p&gt;
+
+&lt;h2 id=&quot;6-기능-추가&quot;&gt;6. 기능 추가&lt;/h2&gt;
+
+&lt;p&gt;추후로 추가할 기능&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;댓글 기능 - 2022.01.15 적용 완료&lt;/li&gt;
+  &lt;li&gt;검색엔진등록 - 2022.02.25일 기준 구글, 네이버, 다음 검색엔진 등록.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;7-느낀점&quot;&gt;7. 느낀점&lt;/h2&gt;
+
+&lt;p&gt;개발을 처음 시작하는 단계인 나에게는 쉽지 않았다고 생각한다.&lt;br /&gt;
+그러나 다양한 것들을 배울 수 있었는데 배운 것들을 간단히 열거해 보면&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;shell command(리눅스 터미널 명령어)&lt;/li&gt;
+  &lt;li&gt;vim&lt;/li&gt;
+  &lt;li&gt;git command&lt;/li&gt;
+  &lt;li&gt;markdown&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이와 같은 것들이 있다.
+사실 위의 4가지 모두 평소에 진입장벽을 느끼는 것들이었는데,&lt;br /&gt;
+블로그를 제작하는 동안 지속적으로 사용하면서 상당히 익숙해졌다.&lt;br /&gt;
+markdown 문법은 이번에 처음 접하게 되었는데 이렇게&lt;br /&gt;
+익숙해질 줄 몰랐다.
+거기다가 iTerm2와 Oh My Zsh를 이용해 터미널을 꾸미고 플러그인을&lt;br /&gt;
+이용해 편리한 개발환경을 구축하는 경험도 해 볼수 있었다.&lt;/p&gt;
+
+&lt;p&gt;특히 git과 github에 조금이나마 익숙해졌다는 것이 기쁘다.&lt;br /&gt;
+만드는 동안은 그냥 다른 플랫폼에 블로그를 할까…생각도 했지만&lt;br /&gt;
+막상 완성해보니 좋은 도전을 한것 같다.&lt;br /&gt;
+또한 블로그에 대한 애정도 배로 생기는 기분이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;8-참고자료-reference&quot;&gt;8. 참고자료 (Reference)&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://iamsang.com/blog/2020/10/10/custom-static-site-generator/&quot;&gt;블로그 개편: 커스텀 정적사이트생성기 개발기&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://kbs4674.tistory.com/187&quot;&gt;rbenv 개념 및 사용이유&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://jamstackthemes.dev/&quot;&gt;https://jamstackthemes.dev/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://zeddios.tistory.com/1223&quot;&gt;Zedd0202님 블로그&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://calgaryhomeless.tistory.com/1&quot;&gt;캘거리 홈리스님 블로그&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://www.irgroup.org/posts/jekyll-chirpy/&quot;&gt;하얀눈길님 블로그&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://jojoldu.tistory.com/288&quot;&gt;https://jojoldu.tistory.com/288&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://github.com/ruby/rdoc/issues/786&quot;&gt;nil:NilClass 관련 에러&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 15 Jan 2022 13:55:35 +0900</pubDate>
+        <link>https://sukyungdev.github.io/posts/Post-01/</link>
+        <guid isPermaLink="true">https://sukyungdev.github.io/posts/Post-01/</guid>
+        
+        <category>Blog</category>
+        
+        
+        <category>Blog</category>
+        
+        <category>Git/Github</category>
+        
+      </item>
+    
+  </channel>
+</rss>
